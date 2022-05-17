@@ -16,7 +16,7 @@ public class Sentlist {
         String s = "";
         s += "\n<div> BEGIN </div>\n";
         for(Sent aux : sentlist) {
-            s += "<div>" + aux + "</div>" + "\n";
+            s += "<div style=\"text-indent: 1.5cm\">" + aux + "</div>" + "\n";
         }
         s += "<div> END </div>\n";
         s += "<A HREF=#Variables>Variables</A>";

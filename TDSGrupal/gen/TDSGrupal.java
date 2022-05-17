@@ -30,7 +30,7 @@ public class TDSGrupal {
                 anasint.axioma();
                 System.out.println("</body>\n</html>");
                 // Llamar al metodo para sacar el resumen de la clase s�ntesis
-                datos.resumen();
+              //  datos.resumen();
             } catch (RecognitionException e) {
                 System.err.println("REC " + e.getMessage());
                 //e.printStackTrace();

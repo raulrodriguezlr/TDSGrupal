@@ -85,10 +85,12 @@ deffun returns [DefSubrutina s]: 'FUNCTION' IDENTIFIER  formal_paramlist ':' tba
         {$s= new DefSubrutina("FUNCTION",$IDENTIFIER.text,$formal_paramlist.s,$tbas.s,$blq.s);} ;
 
 formal_paramlist returns [FormalParamList s]:
-    | '('  formal_param ')' {$s= new FormalParamList(); $s.add($formal_param.s);};
+    | '('  formal_param[new FormalParamList()] ')' {$s=$formal_param.s;};
 
-formal_param returns [FormalParam s]: varlist[new Varlist()] ':' tbas {$s = new FormalParam($varlist.s,$tbas.s);}
-    | varlist[new Varlist()] ':' tbas ';' formal_param ;
+formal_param [FormalParamList h] returns [FormalParamList s]: varlist[new Varlist()] ':' tbas
+    {FormalParam fp=new FormalParam($varlist.s,$tbas.s);
+     $h.add (fp);  $s=$h;}
+    | varlist[new Varlist()] ':' tbas ';'{FormalParam fp=new FormalParam($varlist.s,$tbas.s);   $h.add(fp);} formal_param[$h]  {$s=$formal_param.s;};
 
 tbas returns [String s]: 'integer'{$s="integer";}
     |'real'{$s="real";}
@@ -181,51 +183,38 @@ proc_call returns [Proc_call s]:
 //**********************************************************
 
 
-IDENTIFIER: ([a-zA-Z] | '_')+ [0-9]* ([a-zA-Z] | '_')* ;
-NUMERIC_INTEGER_CONST: ('+' | '-')? [0-9]+ ;
-NUMERIC_REAL_CONST: (FIJO | EXPONENCIAL | MIXTO) ;
-FIJO: ('+' | '-')? [0-9]+ '.' [0-9]+ ;
-
-EXPONENCIAL: ('+' | '-')? [0-9]+ ('e' | 'E') ('+' | '-')? [0-9]+ ;
-MIXTO: ('+' | '-')? [0-9]+ '.' [0-9]+ ('e' | 'E') ('+' | '-')? [0-9]+ ;
-
-STRING_CONST: (SIMPLE | DOBLE) ;
-SIMPLE:'\'' ~('\'' | '\n')* ('\'\'')? ~('\'' | '\n')* '\'' ;
-DOBLE:'"' ~('"' | '\n')* ('""')? ~('"' | '\n')* '"' ;
-COMENTARIO: (CORCHETE | PARENTESIS_ASTERISCO) ;
-CORCHETE : '{' ~('}' | '\n')* '}' ;
-PARENTESIS_ASTERISCO:'(*' ~('*')* ('*' ~(')'))*? ~('*')* '*)' ;
-WHITESPACE : [ \n\t\r]+ -> skip;
 
 
-/*
-//IDENTIFIER : (LETRAS|'_')(NUMEROS|LETRAS|'_')*;
-IDENTIFIER:(LETRAS|'_')+NUMEROS*(LETRAS|'_')*;
+ //IDENTIFIER : (LETRAS|'_')(NUMEROS|LETRAS|'_')*;
+ IDENTIFIER:(LETRAS|'_')+NUMEROS*(LETRAS|'_')*;
 
-NUMERIC_INTEGER_CONST: ('+'|'-')? NUMEROS+ ;
+ NUMERIC_INTEGER_CONST: ('+'|'-')? NUMEROS+ ;
 
-NUMERIC_REAL_CONST: (PUNTOFIJO|EXPONENCIAL|MIXTO);
+ NUMERIC_REAL_CONST: (PUNTOFIJO|EXPONENCIAL|MIXTO);
 
-//CONSTANTES LITERALES
-STRING_CONST : (('\'' ~('\'')+('\'''\'')*~('\'')+'\'') | ('"'(~('"')+('"''"')*~('"')+)'"'));
+ //CONSTANTES LITERALES
+ STRING_CONST : (('\'' ~('\'')+('\'''\'')*~('\'')+'\'') | ('"'(~('"')+('"''"')*~('"')+)'"'));
 
-//COMENTARIOS
-COMENTARIOS_1L : '{'~('\n')*'}';
-COMENTARIOS_2L : '(''*'~(')')*'*'')';
+ //COMENTARIOS
+ COMENTARIO: (CORCHETE | PARENTESIS_ASTERISCO) ->channel(HIDDEN) ;
+ CORCHETE : '{' ~('}' | '\n')* '}' ;
+ PARENTESIS_ASTERISCO:'(*' ~('*')* ('*' ~(')'))*? ~('*')* '*)' ;
 
-fragment
-LETRAS: [a-zA-Z];
-fragment
-NUMEROS:[0-9];
-//DISTINTOS REALES
-fragment
-PUNTOFIJO: ('+'|'-')?NUMEROS+'.'('+'|'-')?NUMEROS+;
-fragment
-EXPONENCIAL: ('+'|'-')?NUMEROS+('e'|'E')('+'|'-')?NUMEROS+;
-fragment
-MIXTO: ('+'|'-')?NUMEROS+'.'NUMEROS+('e'|'E')('+'|'-')?NUMEROS+;
+ fragment
+ LETRAS: [a-zA-Z];
+ fragment
+ NUMEROS:[0-9];
+ //DISTINTOS REALES
+ fragment
+ PUNTOFIJO: ('+'|'-')?NUMEROS+'.'('+'|'-')?NUMEROS+;
+ fragment
+ EXPONENCIAL: ('+'|'-')?NUMEROS+('e'|'E')('+'|'-')?NUMEROS+;
+ fragment
+ MIXTO: ('+'|'-')?NUMEROS+'.'NUMEROS+('e'|'E')('+'|'-')?NUMEROS+;
 
 
 
-WHITESPACE : [ \n\t\r]+ -> skip ;
+ WHITESPACE : [ \n\t\r]+ -> skip ;
+
+
 

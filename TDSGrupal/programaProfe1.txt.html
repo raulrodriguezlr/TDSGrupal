@@ -18,67 +18,65 @@ r3 = 45.07000;
 			<A HREF=_get_input_>_get_input_</A>
 		</LI>
 			<LI>
-			<A HREF=Celsius2Fahrenheit>real Celsius2Fahrenheit(null)</A>
+			<A HREF=Celsius2Fahrenheit>real Celsius2Fahrenheit(Celsius_temp: realdummy_value: integer)</A>
 		</LI>
 			<LI>
-			<A HREF=Ending>Ending(null)</A>
+			<A HREF=Ending>Ending(dummy_value2: realdummy_value3: integer)</A>
 		</LI>
 	</UL>
 <HR/>
 
 	<div>
-		<A NAME=_get_input_>PROCEDURE _get_input_</A>
+		<A NAME=#_get_input_>PROCEDURE _get_input_</A>
 	</div>
 	
 <div> BEGIN </div>
-<div>Write('Enter Degrees C: ');</div>
-<div>Read(Celsius_temp );</div>
+<div style="text-indent: 1.5cm">Write('Enter Degrees C: ');</div>
+<div style="text-indent: 1.5cm">Read(Celsius_temp );</div>
 <div> END </div>
 <A HREF=#Variables>Variables</A>
 	<div>
-		<A NAME=Celsius2Fahrenheit>FUNCTION Celsius2Fahrenheit(null)</A>
+		<A NAME=#Celsius2Fahrenheit>FUNCTION Celsius2Fahrenheit(Celsius_temp: realdummy_value: integer)</A>
 	</div>
 		<div>VAR</div>
 <div>temperature: real;
 </div>	
 <div> BEGIN </div>
-<div>temperature:= (ratio *Celsius_temp )+32.0;</div>
-<div>Celsius2Fahrenheit:= temperature ;</div>
+<div style="text-indent: 1.5cm">temperature:= (ratio *Celsius_temp )+32.0;</div>
+<div style="text-indent: 1.5cm">Celsius2Fahrenheit:= temperature ;</div>
 <div> END </div>
 <A HREF=#Variables>Variables</A>
 	<div>
-		<A NAME=Ending>PROCEDURE Ending(null)</A>
+		<A NAME=#Ending>PROCEDURE Ending(dummy_value2: realdummy_value3: integer)</A>
 	</div>
 	
 <div> BEGIN </div>
-<div>WriteLn;</div>
-<div>WriteLn('Exiting...');</div>
-<div>WriteLn;</div>
+<div style="text-indent: 1.5cm">WriteLn;</div>
+<div style="text-indent: 1.5cm">WriteLn('Exiting...');</div>
+<div style="text-indent: 1.5cm">WriteLn;</div>
 <div> END </div>
 <A HREF=#Variables>Variables</A>
 <div> BEGIN </div>
-<div>int1:= +123;</div>
-<div>int2:= -690;</div>
-<div>int3:= 405;</div>
-<div>int4:= 000078;</div>
-<div>int5:= -005;</div>
-<div>int6:= +0953;</div>
-<div>_get_input_;</div>
-<div>Fahrenheit_temp:= Celsius2Fahrenheit (Celsius_temp );</div>
-<div>Write('Fahrenheit  is ');</div>
-<div>Write("Hola Mundo");</div>
-<div>e1:= 123E456;</div>
-<div>e2:= -64E-77;</div>
-<div>e3:= +045e16;</div>
-<div>e4:= 003E+35;</div>
-<div>m1:= 1.23E456;</div>
-<div>m2:= -000.64E-77;</div>
-<div>m3:= +045.0e16;</div>
-<div>m4:= 0.03E+35;</div>
-<div>Write(ROUND (Fahrenheit_temp ));</div>
-<div>Ending;</div>
+<div style="text-indent: 1.5cm">int1:= +123;</div>
+<div style="text-indent: 1.5cm">int2:= -690;</div>
+<div style="text-indent: 1.5cm">int3:= 405;</div>
+<div style="text-indent: 1.5cm">int4:= 000078;</div>
+<div style="text-indent: 1.5cm">int5:= -005;</div>
+<div style="text-indent: 1.5cm">int6:= +0953;</div>
+<div style="text-indent: 1.5cm">_get_input_;</div>
+<div style="text-indent: 1.5cm">Fahrenheit_temp:= Celsius2Fahrenheit (Celsius_temp );</div>
+<div style="text-indent: 1.5cm">Write('Fahrenheit  is ');</div>
+<div style="text-indent: 1.5cm">e1:= 123E456;</div>
+<div style="text-indent: 1.5cm">e2:= -64E-77;</div>
+<div style="text-indent: 1.5cm">e3:= +045e16;</div>
+<div style="text-indent: 1.5cm">e4:= 003E+35;</div>
+<div style="text-indent: 1.5cm">m1:= 1.23E456;</div>
+<div style="text-indent: 1.5cm">m2:= -000.64E-77;</div>
+<div style="text-indent: 1.5cm">m3:= +045.0e16;</div>
+<div style="text-indent: 1.5cm">m4:= 0.03E+35;</div>
+<div style="text-indent: 1.5cm">Write(ROUND (Fahrenheit_temp ));</div>
+<div style="text-indent: 1.5cm">Ending;</div>
 <div> END </div>
 <A HREF=#Variables>Variables</A>
 </body>
 </html>
-No hay declaraciones.

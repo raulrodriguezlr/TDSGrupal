@@ -27,7 +27,7 @@ public class DefSubrutina {
 
     public String subrutinaCompleta(){
 
-        String s="\n\t<div>\n\t\t<A NAME="+id+">"+cabecera+" "+id;
+        String s="\n\t<div>\n\t\t<A NAME=#"+id+">"+cabecera+" "+id;
         if(paramlist!=null) {
             s+="(" + paramlist + ")";
         }

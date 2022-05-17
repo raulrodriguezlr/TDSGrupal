@@ -1,23 +1,26 @@
-
+(* Simple Program to Convert
+Celsius temperature to Fahrenheit
+to evaluate the mandatory part
+*)
 PROGRAM Convert;
     CONST
         ratio = 1.8;
         r1 = +123.456; r2 = -00.69; r3 = 45.07000;
     VAR
         Celsius_temp, Fahrenheit_temp: real;
-
+    (*--procedure definition --*)
     PROCEDURE _get_input_;
     BEGIN
         Write('Enter Degrees C: ');
         Read(Celsius_temp);
     END;
-
+    (*--function definition --*)
     FUNCTION Celsius2Fahrenheit(Celsius_temp: real; dummy_value : integer): real;
     VAR
-
+       { local variable declaration }
        temperature: real;
     BEGIN
-       temperature := (ratio * Celsius_temp) + 32.0;
+       temperature := (ratio * Celsius_temp) + 32.0;        {Celsius to Fahrenheit formula}
        Celsius2Fahrenheit := temperature;
     END;
     PROCEDURE Ending (dummy_value2 : real; dummy_value3 : integer);
@@ -26,13 +29,13 @@ PROGRAM Convert;
         WriteLn('Exiting...');
         WriteLn;
     END;
-
+{****** MAIN PROGRAM ******}
 BEGIN
     int1 := +123; int2 := -690; int3 := 405; int4 := 000078; int5 := -005; int6 :=+0953;
     _get_input_;
-    Fahrenheit_temp := Celsius2Fahrenheit(Celsius_temp);
+    Fahrenheit_temp := Celsius2Fahrenheit(Celsius_temp);    {Call the Function}
     Write('Fahrenheit  is ');
-    Write("Hola Mundo");
+    { More Dummy declarations }
     e1 := 123E456; e2 := -64E-77; e3 := +045e16; e4 := 003E+35;
     m1 := 1.23E456; m2 := -000.64E-77; m3 := +045.0e16; m4 := 0.03E+35;
     Write(ROUND(Fahrenheit_temp));
