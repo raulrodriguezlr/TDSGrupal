@@ -13,6 +13,7 @@ grammar TDSGrupal;
 // SINTÁCTICO
 //**********************************************************
 
+
 axioma : prg <EOF> {System.out.println($prg.s); } ;
 
 prg returns [Prg s] :
@@ -32,67 +33,83 @@ dcllist [Dcllist h] returns [Dcllist s]:  dcl{
                                 | {$s=$h; };
 
 sentlist [Sentlist h] returns [Sentlist s] :
-    sent {$h.add($sent.s);} sentlistAux[$h]{$s=$h;} ;
+    sent {$h.add($sent.s);} sentlistAux[$h]{$s=$h;}
+    ;
 
 sentlistAux [Sentlist h] returns [Sentlist s]:
     {$s=$h;}
-    | sent {$h.add($sent.s);} sentlistAux[$h]{$s=$h;} ;
+    | sent {$h.add($sent.s);} sentlistAux[$h]{$s=$h;}
+    ;
 
 //---------------------------------------
 
 dcl returns [Dcl s]:
     defcte {$s = new Dcl();$s.setDefcte($defcte.s);}
-    |  defvar{$s = new Dcl();$s.setDefvar($defvar.s);}
-    |   defproc{$s = new Dcl();$s.setDefSubrutina($defproc.s);}
-    |   deffun{$s = new Dcl();$s.setDefSubrutina($deffun.s);}
+    |  defvar {$s = new Dcl();$s.setDefvar($defvar.s);}
+    |   defproc {$s = new Dcl();$s.setDefSubrutina($defproc.s);}
+    |   deffun {$s = new Dcl();$s.setDefSubrutina($deffun.s);}
     ;
 
-defcte returns[Defcte s]: 'CONST'{$s = new Defcte();} ctelist {$s.setCtelist($ctelist.s);} ;
+defcte returns[Defcte s]:
+    'CONST'{$s = new Defcte();} ctelist {$s.setCtelist($ctelist.s);} ;
 
-ctelist returns[Ctelist s]: {$s=new Ctelist();} IDENTIFIER '=' simpvalue ';'
-    {$s.add($IDENTIFIER.text+" = "+$simpvalue.s+";\n");} ctelistAux[$s]
- ;
+ctelist returns[Ctelist s]:
+    {$s=new Ctelist();} IDENTIFIER '=' simpvalue ';'
+        {$s.add($IDENTIFIER.text+" = "+$simpvalue.s+";\n");} ctelistAux[$s]
+    ;
 
 ctelistAux [Ctelist h] returns[Ctelist s]:
-      {$s=$h; }
+     {$s=$h; }
     | IDENTIFIER '=' simpvalue ';'
     {$h.add($IDENTIFIER.text+" = "+$simpvalue.s+";\n");}
-    ctelistAux[$h]{$s=$h;} ;
+    ctelistAux[$h]{$s=$h;}
+    ;
 
 simpvalue returns [String s]: NUMERIC_INTEGER_CONST {$s=$NUMERIC_INTEGER_CONST.text;}
-    | NUMERIC_REAL_CONST {$s=(String)$NUMERIC_REAL_CONST.text;}
+    | NUMERIC_REAL_CONST {$s=$NUMERIC_REAL_CONST.text;}
     | STRING_CONST {$s=$STRING_CONST.text;}
     ;
 
-defvar returns [Defvar s] : 'VAR' defvarlist[new Defvarlist()] ';'{$s = new Defvar("VAR");
-                    $s.setDefvarlist($defvarlist.s);} ;
+defvar returns [Defvar s] :
+    'VAR' defvarlist[new Defvarlist()] ';'{$s = new Defvar("VAR");
+                    $s.setDefvarlist($defvarlist.s);}
+    ;
 
 defvarlist [Defvarlist h] returns [Defvarlist s]:
-            varlist[new Varlist()]{$h.add($varlist.s);} ':'
-            tbas{$h.addTbas($tbas.s);} defvarlistAux[$h]{$s=$h;} ;
+    varlist[new Varlist()]{$h.add($varlist.s);} ':'
+        tbas{$h.addTbas($tbas.s);} defvarlistAux[$h]{$s=$h;}
+    ;
 
 defvarlistAux[Defvarlist h] returns[Defvarlist s]:
      {$s=$h; }
     | ';' varlist[new Varlist()]{$h.add($varlist.s);} ':' tbas {$h.addTbas($tbas.s);} defvarlistAux[h] ;
 
-varlist [Varlist h] returns [Varlist s]: IDENTIFIER {$h.add($IDENTIFIER.text);$s=$h;}
-    | IDENTIFIER {$h.add($IDENTIFIER.text+",");} ',' varlist[$h] {$s=$h;};
+varlist [Varlist h] returns [Varlist s]:
+    IDENTIFIER {$h.add($IDENTIFIER.text);$s=$h;}
+    | IDENTIFIER {$h.add($IDENTIFIER.text+",");} ',' varlist[$h] {$s=$h;}
+    ;
 
-defproc returns [DefSubrutina s]: 'PROCEDURE' IDENTIFIER formal_paramlist ';' blq ';'
-         {$s= new DefSubrutina("PROCEDURE",$IDENTIFIER.text,$formal_paramlist.s,$blq.s);};
+defproc returns [DefSubrutina s]:
+    'PROCEDURE' IDENTIFIER formal_paramlist ';' blq ';'
+         {$s= new DefSubrutina("PROCEDURE",$IDENTIFIER.text,$formal_paramlist.s,$blq.s);}
+    ;
 
-deffun returns [DefSubrutina s]: 'FUNCTION' IDENTIFIER  formal_paramlist ':' tbas ';' blq ';'
-        {$s= new DefSubrutina("FUNCTION",$IDENTIFIER.text,$formal_paramlist.s,$tbas.s,$blq.s);} ;
+deffun returns [DefSubrutina s]:
+    'FUNCTION' IDENTIFIER  formal_paramlist ':' tbas ';' blq ';'
+        {$s= new DefSubrutina("FUNCTION",$IDENTIFIER.text,$formal_paramlist.s,$tbas.s,$blq.s);}
+    ;
 
 formal_paramlist returns [FormalParamList s]:
     | '('  formal_param[new FormalParamList()] ')' {$s=$formal_param.s;};
 
 formal_param [FormalParamList h] returns [FormalParamList s]: varlist[new Varlist()] ':' tbas
     {FormalParam fp=new FormalParam($varlist.s,$tbas.s);
-     $h.add(fp);  $s=$h;}
+     $h.add (fp);  $s=$h;}
     | varlist[new Varlist()] ':' tbas ';'{FormalParam fp=new FormalParam($varlist.s,$tbas.s);   $h.add(fp);} formal_param[$h]  {$s=$formal_param.s;};
 
-tbas returns [String s]: 'integer'{$s="integer";}
+
+tbas returns [String s]:
+    'integer'{$s="integer";}
     |'real'{$s="real";}
     ;
 
@@ -101,14 +118,21 @@ sent returns [Sent s] :
     | proc_call ';' {$s = new Sent(); $s.setProc_call($proc_call.s);}
     | 'IF' expcond[new Expcond()] 'THEN' blq {Blq blq1 = new Blq("",""); blq1 = $blq.s;} 'ELSE' blq {Blq blq2 = new Blq("",""); blq2 = $blq.s;}
                                             {$s = new Sent();
-                                            If cond = new If(); cond.setExpcond($expcond.s);
+                                            If_while_repeat cond = new If_while_repeat(); cond.setExpcond($expcond.s);
                                             cond.setBlq1(blq1); cond.setBlq2(blq2); $s.setCond(cond);}
-    | 'WHILE' expcond[new Expcond()] 'DO' blq
-    | 'REPEAT' blq 'UNTIL' expcond[new Expcond()] ';'
-    | 'FOR' IDENTIFIER ':=' exp[new Exp()] inc exp[new Exp()] 'DO' blq ;
+    | 'WHILE' expcond[new Expcond()] 'DO' blq {$s = new Sent(); If_while_repeat cond = new If_while_repeat();
+                                            cond.setExpcond($expcond.s); cond.setBlq1($blq.s); $s.setBucle_while(cond);}
+    | 'REPEAT' blq 'UNTIL' expcond[new Expcond()] ';' {$s = new Sent(); If_while_repeat cond = new If_while_repeat();
+                                            cond.setBlq1($blq.s); cond.setExpcond($expcond.s); $s.setBucle_repeat(cond);}
+    | 'FOR' {For f = new For();} IDENTIFIER {f.setId($IDENTIFIER.text);} ':=' exp[new Exp()] {f.setExp1($exp.s);}
+                                            inc {f.setInc($inc.s);} exp[new Exp()]  {f.setExp2($exp.s);}
+                                            'DO' blq {f.setBlq($blq.s); $s = new Sent(); $s.setBucle_for(f);}
+    ;
 
-inc: 'TO'
-    | 'DOWNTO' ;
+inc returns [String s] :
+    'TO' {$s = "TO";}
+    | 'DOWNTO' {$s = "DOWNTO";}
+    ;
 
 expcond [Expcond h] returns [Expcond s] :
     {$s = new Expcond();} factorcond[new Factorcond()] {$s.addFactorcond($factorcond.s);} expcondAux[$s]
@@ -178,11 +202,10 @@ proc_call returns [Proc_call s]:
     ;
 
 
+
 //**********************************************************
 // LÉXICO
 //**********************************************************
-
-
 
 
  //IDENTIFIER : (LETRAS|'_')(NUMEROS|LETRAS|'_')*;

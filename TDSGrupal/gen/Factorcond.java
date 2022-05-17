@@ -10,7 +10,7 @@ public class Factorcond {
 
     public Factorcond() {
         exp1 = null;
-        opcomp = "";
+        opcomp = null;
         exp2 = null;
         expcond = null;
         string = new ArrayList<>();
@@ -40,6 +40,9 @@ public class Factorcond {
         String s = "";
         if(exp1!=null) {
             s += exp1 + opcomp + exp2;
+        }
+        if(expcond!=null) {
+            s += "(" + expcond + ")";
         }
         if(!string.isEmpty()) {
             s += string;
