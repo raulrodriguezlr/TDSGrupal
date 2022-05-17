@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>programaProfe1.txt.html</title>
+</head>
+<body>
+<H1>Programa: Convert</H1>
+	CONST 
+ratio = 1.8;
+r1 = +123.456;
+r2 = -00.69;
+r3 = 45.07000;
+		<div>VAR</div>
+<div>Celsius_temp,Fahrenheit_temp: real;
+</div>		<H2> Funciones y procedimientos </H2>
+	<UL>
+		<LI>
+			<A HREF=_get_input_>_get_input_</A>
+		</LI>
+			<LI>
+			<A HREF=Celsius2Fahrenheit>real Celsius2Fahrenheit(null)</A>
+		</LI>
+			<LI>
+			<A HREF=Ending>Ending(null)</A>
+		</LI>
+	</UL>
+<HR/>
+
+	<div>
+		<A NAME=_get_input_>PROCEDURE _get_input_</A>
+	</div>
+	
+<div> BEGIN </div>
+<div>Write('Enter Degrees C: ');</div>
+<div>Read(Celsius_temp );</div>
+<div> END </div>
+<A HREF=#Variables>Variables</A>
+	<div>
+		<A NAME=Celsius2Fahrenheit>FUNCTION Celsius2Fahrenheit(null)</A>
+	</div>
+		<div>VAR</div>
+<div>temperature: real;
+</div>	
+<div> BEGIN </div>
+<div>temperature:= (ratio *Celsius_temp )+32.0;</div>
+<div> END </div>
+<A HREF=#Variables>Variables</A>
+	<div>
+		<A NAME=Ending>PROCEDURE Ending(null)</A>
+	</div>
+	
+<div> BEGIN </div>
+<div>WriteLn;</div>
+<div>WriteLn('Exiting...');</div>
+<div>WriteLn;</div>
+<div> END </div>
+<A HREF=#Variables>Variables</A>
+<div> BEGIN </div>
+<div>int1:= +123;</div>
+<div>int2:= -690;</div>
+<div>int3:= 405;</div>
+<div>int4:= 000078;</div>
+<div>int5:= -005;</div>
+<div>int6:= +0953;</div>
+<div>_get_input_;</div>
+<div>Fahrenheit_temp:= Celsius2Fahrenheit (Celsius_temp );</div>
+<div> END </div>
+<A HREF=#Variables>Variables</A>
+</body>
+</html>
+No hay declaraciones.

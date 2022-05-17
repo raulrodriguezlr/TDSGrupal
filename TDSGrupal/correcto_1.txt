@@ -1,0 +1,29 @@
+PROGRAM miPrograma;
+
+FUNCTION funcion1 (a: integer) : integer;
+BEGIN
+    a :=1;
+END;
+FUNCTION funcion2 (a: integer) : integer;
+
+BEGIN
+    a := 0;
+    B := 0;
+END;
+PROCEDURE procedure1(a:integer);
+BEGIN
+    a:=8;
+END;
+VAR
+a: integer;
+b: real;
+CONST
+ c = 'Hola Mundo' ;
+ s='HOLA MUNDO';
+BEGIN
+
+    a := 0;
+    b := a + 1;
+    writeln('Hola');
+
+END.
