@@ -1,6 +1,7 @@
 (* Simple Program to Convert
 Celsius temperature to Fahrenheit
 to evaluate the optional part
+with nested loops
 *)
 PROGRAM Convert;
     CONST
@@ -16,6 +17,15 @@ PROGRAM Convert;
         IF Celsius_temp >= 0 THEN
             BEGIN
                 WriteLn('Positive input');
+                IF Celsius_temp >= 40.0 THEN
+                    BEGIN
+                        WriteLn('Too hot ');
+                    END
+                ELSE
+                    BEGIN
+                        WriteLn('Alright ');
+                    END
+                WriteLn('Temperature');
             END
         ELSE
             BEGIN
@@ -44,6 +54,19 @@ PROGRAM Convert;
             BEGIN
                 sum := sum + number;
                 number := number DIV 2;
+                REPEAT
+                    BEGIN
+                        IF (sum = number) THEN
+                            BEGIN
+                                WriteLn('SUM = NUMBER');
+                            END
+                        ELSE
+                            BEGIN
+                                WriteLn('SUM IS NOT = TO NUMBER');
+                            END
+                        WriteLn('Repeating');
+                    END
+                UNTIL (sum <= 10);
             END
         UNTIL (number = 0) OR (sum > 20.25E2);
     END;

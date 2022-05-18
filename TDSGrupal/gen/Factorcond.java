@@ -39,7 +39,7 @@ public class Factorcond {
     public String toString() {
         String s = "";
         if(exp1!=null) {
-            s += exp1 + opcomp + exp2;
+            s += exp2 + opcomp + exp1;
         }
         if(expcond!=null) {
             s += "(" + expcond + ")";

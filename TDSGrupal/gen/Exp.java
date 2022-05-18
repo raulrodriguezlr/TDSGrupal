@@ -20,11 +20,17 @@ public class Exp {
 
     public String toString() {
         String s = "";
-        for(int i=0; i < factor.size(); i++) {
+
+        if(op.isEmpty()){
+            s += factor.get(0);
+        }
+        else{
+            for(int i=0; i < factor.size(); i++) {
                 s += factor.get(i).toString();
                 if (i != factor.size() - 1) {
                     s += op.get(i).toString();
                 }
+            }
         }
         return s;
     }

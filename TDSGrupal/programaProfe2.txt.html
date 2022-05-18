@@ -1,6 +1,120 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>programaProfe2.txt.html</title>
+	<title>TDSGrupal/programaProfe2.txt.html</title>
 </head>
 <body>
+<H1>Programa: Convert</H1>
+	CONST 
+ratio = 1.8;
+r1 = +123.456;
+r2 = -00.69;
+r3 = 45.07000;
+		<div>VAR</div>
+<div>Celsius_temp,Fahrenheit_temp: real;
+</div>		<H2> Funciones y procedimientos </H2>
+	<UL>
+		<LI>
+			<A HREF=_get_input_>_get_input_</A>
+		</LI>
+			<LI>
+			<A HREF=Celsius2Fahrenheit>real Celsius2Fahrenheit(Celsius_temp: realdummy_value: integer)</A>
+		</LI>
+			<LI>
+			<A HREF=Ending>Ending(dummy_value2: realdummy_value3: integer)</A>
+		</LI>
+			<LI>
+			<A HREF=Another_dummy1_function>integer Another_dummy1_function(dummy_variable: real)</A>
+		</LI>
+	</UL>
+<HR/>
+
+	<div>
+		<A NAME=#_get_input_>PROCEDURE _get_input_</A>
+	</div>
+	
+<div> BEGIN </div>
+<div style="text-indent: 1.5cm">Write('Enter Degrees C: ');</div>
+<div style="text-indent: 1.5cm">Read(Celsius_temp );</div>
+<div style="text-indent: 1.5cm">IF null>=0 THEN
+<div style="text-indent: 3cm">
+<div> BEGIN </div>
+<div style="text-indent: 1.5cm">WriteLn('Positive input');</div>
+<div> END </div>
+<A HREF=#Variables>Variables</A></div>
+ELSE
+
+<div> BEGIN </div>
+<div style="text-indent: 1.5cm">WriteLn('Negative input');</div>
+<div> END </div>
+<A HREF=#Variables>Variables</A></div>
+<div style="text-indent: 1.5cm">WriteLn('Sentence with "double quotes" inside');</div>
+<div> END </div>
+<A HREF=#Variables>Variables</A>
+	<div>
+		<A NAME=#Celsius2Fahrenheit>FUNCTION Celsius2Fahrenheit(Celsius_temp: realdummy_value: integer)</A>
+	</div>
+		<div>VAR</div>
+<div>temperature: real;
+</div>	
+<div> BEGIN </div>
+<div style="text-indent: 1.5cm">temperature:= (ratio *Celsius_temp )+32.0;</div>
+<div style="text-indent: 1.5cm">Celsius2Fahrenheit:= temperature ;</div>
+<div> END </div>
+<A HREF=#Variables>Variables</A>
+	<div>
+		<A NAME=#Ending>PROCEDURE Ending(dummy_value2: realdummy_value3: integer)</A>
+	</div>
+	
+<div> BEGIN </div>
+<div style="text-indent: 1.5cm">WriteLn;</div>
+<div style="text-indent: 1.5cm">WriteLn('Exiting...');</div>
+<div style="text-indent: 1.5cm">WriteLn;</div>
+<div> END </div>
+<A HREF=#Variables>Variables</A>
+	<div>
+		<A NAME=#Another_dummy1_function>FUNCTION Another_dummy1_function(dummy_variable: real)</A>
+	</div>
+	
+<div> BEGIN </div>
+<div style="text-indent: 1.5cm">REPEAT
+
+<div> BEGIN </div>
+<div style="text-indent: 1.5cm">sum:= sum +number ;</div>
+<div style="text-indent: 1.5cm">number:= number DIV2;</div>
+<div> END </div>
+<A HREF=#Variables>Variables</A>
+UNTIL (null=0)OR;</div>
+<div> END </div>
+<A HREF=#Variables>Variables</A>
+<div> BEGIN </div>
+<div style="text-indent: 1.5cm">int1:= +123;</div>
+<div style="text-indent: 1.5cm">int2:= -690;</div>
+<div style="text-indent: 1.5cm">int3:= 405;</div>
+<div style="text-indent: 1.5cm">int4:= 000078;</div>
+<div style="text-indent: 1.5cm">int5:= -005;</div>
+<div style="text-indent: 1.5cm">int6:= +0953;</div>
+<div style="text-indent: 1.5cm">_get_input_;</div>
+<div style="text-indent: 1.5cm">Fahrenheit_temp:= Celsius2Fahrenheit (Celsius_temp );</div>
+<div style="text-indent: 1.5cm">Write('Fahrenheit  is ');</div>
+<div style="text-indent: 1.5cm">e1:= 123E456;</div>
+<div style="text-indent: 1.5cm">e2:= -64E-77;</div>
+<div style="text-indent: 1.5cm">e3:= +045e16;</div>
+<div style="text-indent: 1.5cm">e4:= 003E+35;</div>
+<div style="text-indent: 1.5cm">m1:= 1.23E456;</div>
+<div style="text-indent: 1.5cm">m2:= -000.64E-77;</div>
+<div style="text-indent: 1.5cm">m3:= +045.0e16;</div>
+<div style="text-indent: 1.5cm">m4:= 0.03E+35;</div>
+<div style="text-indent: 1.5cm">Write(ROUND (Fahrenheit_temp ));</div>
+<div style="text-indent: 1.5cm">FOR i:= 1 TO 10 DO 
+<div style="text-indent: 3cm">
+<div> BEGIN </div>
+<div style="text-indent: 1.5cm">Writeln(i );</div>
+<div> END </div>
+<A HREF=#Variables>Variables</A></div>
+</div>
+<div style="text-indent: 1.5cm">Ending;</div>
+<div> END </div>
+<A HREF=#Variables>Variables</A>
+</body>
+</html>

@@ -36,8 +36,9 @@ public class For {
 
         public String toString() {
             String s = "";
-            s += "FOR " + id + ":= " + exp1 + inc + exp2 + "DO \n";
-            s += blq;
+            s += "FOR " + id + ":= " + exp1 + " " + inc + " " + exp2 + " DO \n";
+            //s += blq;
+            s += "<div style=\"text-indent: 3cm\">" + blq + "</div>" + "\n";
             return s;
         }
     

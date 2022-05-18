@@ -1,8 +1,6 @@
 public class Factor {
     private String simpvalue;
-    private String cab;
     private Exp exp;
-    private String cola;
     private String id;
     private Subparamlist subparamlist;
 
@@ -39,7 +37,12 @@ public class Factor {
             s += "(" + exp + ")";
         }
         if(!id.equals("")) {
-            s += id +" "+subparamlist;
+            if(subparamlist!=null) {
+                s += id +" "+subparamlist;
+            }
+            else{
+                s += id;
+            }
         }
 
         return s;

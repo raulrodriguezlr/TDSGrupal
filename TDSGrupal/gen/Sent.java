@@ -49,17 +49,18 @@ public class Sent {
         }
         if(cond!=null) {
             s += "IF " + cond.getExpcond() + " THEN\n";
-            s += cond.getBlq1() + "\n";
+            s += "<div style=\"text-indent: 3cm\">" + cond.getBlq1() + "</div>" + "\n";
             s += "ELSE\n";
             s += cond.getBlq2();
             return s;
         }
         if(bucle_while!=null) {
             s += "WHILE " + bucle_while.getExpcond() + " DO\n";
-            s += bucle_while.getBlq1();
+            s += "<div style=\"text-indent: 3cm\">" + bucle_while.getBlq1() + "</div>" + "\n";
         }
         if(bucle_repeat!=null) {
-            s += "REPEAT\n" + bucle_repeat.getBlq1() + "\n";
+            s += "REPEAT\n";
+            s += "<div style=\"text-indent: 3cm\">" + bucle_repeat.getBlq1() + "</div>" + "\n";
             s += "UNTIL " + bucle_repeat.getExpcond() + ";";
         }
         if(bucle_for!=null){

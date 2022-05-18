@@ -36,48 +36,50 @@ public class Dcllist {
     }
     public String toString() {
         String s = "";
-        if (dcl.get(0).esSubRutina() == true) {
-            s += "\t" + "<H2> Funciones y procedimientos </H2>\n" + "\t" + cabecera + "\n";
-            int i = 0;
-            while (dcl.get(i).esSubRutina() == true) {
-                s += dcl.get(i);
-                i++;
-                if (dcl.get(i).esSubRutina() == false)
-                    s += cola + "\n";
+        if(!dcl.isEmpty()) {
+            if (dcl.get(0).esSubRutina() == true) {
+                s += "\t" + "<H2> Funciones y procedimientos </H2>\n" + "\t" + cabecera + "\n";
+                int i = 0;
+                while (dcl.get(i).esSubRutina() == true) {
+                    s += dcl.get(i);
+                    i++;
+                    if (dcl.get(i).esSubRutina() == false)
+                        s += cola + "\n";
+                }
+                s += "<HR/>\n";
+                i = 0;
+                while (dcl.get(i).esSubRutina() == true) {
+                    s += dcl.get(i).getDefSubrutina().subrutinaCompleta();
+                    i++;
+                }
+                while (i < dcl.size()) {
+                    s += dcl.get(i);
+                    i++;
+                }
+                s += "<H2>Programa principal</H2> \n";
+                return s;
+            } else {
+                int i = 0;
+                while (i < dcl.size() && dcl.get(i).esSubRutina() == false) {
+                    s += dcl.get(i);
+                    i++;
+                }
+                int aux = i;
+                s += "\t" + "<H2> Funciones y procedimientos </H2>\n" + "\t" + cabecera + "\n";
+                while (i < dcl.size()) {
+                    s += dcl.get(i);
+                    i++;
+                }
+                s += cola + "\n";
+                s += "<HR/>\n";
+                i = aux;
+                while (i < dcl.size()) {
+                    s += dcl.get(i).getDefSubrutina().subrutinaCompleta();
+                    i++;
+                }
+                return s;
             }
-            s += "<HR/>\n";
-            i = 0;
-            while (dcl.get(i).esSubRutina() == true) {
-                s += dcl.get(i).getDefSubrutina().subrutinaCompleta();
-                i++;
-            }
-            while (i < dcl.size()) {
-                s += dcl.get(i);
-                i++;
-            }
-            s += "<H2>Programa principal</H2> \n";
-            return s;
         }
-        else{
-            int i=0;
-            while (i < dcl.size()&&dcl.get(i).esSubRutina() == false) {
-                s += dcl.get(i);
-                i++;
-            }
-            int aux =i;
-            s += "\t" + "<H2> Funciones y procedimientos </H2>\n" + "\t" + cabecera + "\n";
-            while (i < dcl.size()) {
-                s += dcl.get(i);
-                i++;
-            }
-            s += cola + "\n";
-            s += "<HR/>\n";
-            i = aux;
-            while (i < dcl.size()) {
-                s += dcl.get(i).getDefSubrutina().subrutinaCompleta();
-                i++;
-            }
-            return s;
-        }
+        return s;
     }
 }
