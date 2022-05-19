@@ -50,6 +50,7 @@ PROGRAM Convert;
     END;
     FUNCTION Another_dummy1_function  (dummy_variable : real) :integer;
     BEGIN
+
         REPEAT
             BEGIN
                 sum := sum + number;
@@ -80,6 +81,10 @@ BEGIN
     e1 := 123E456; e2 := -64E-77; e3 := +045e16; e4 := 003E+35;
     m1 := 1.23E456; m2 := -000.64E-77; m3 := +045.0e16; m4 := 0.03E+35;
     Write(ROUND(Fahrenheit_temp));
+    WHILE (i<10) DO
+        BEGIN
+            Writeln(i);
+        END
     FOR i:= 1 TO 10 DO
         BEGIN
             Writeln(i);

@@ -28,7 +28,7 @@ public class Exp {
             for(int i=0; i < factor.size(); i++) {
                 s += factor.get(i).toString();
                 if (i != factor.size() - 1) {
-                    s += op.get(i).toString();
+                    s += op.get(i).toString()+" ";
                 }
             }
         }

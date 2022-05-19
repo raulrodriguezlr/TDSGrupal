@@ -1,10 +1,16 @@
 public class Proc_call {
     private String id;
     private Subparamlist subparamlist;
+    private int identacion;
 
     public Proc_call() {
         this.id = "";
         this.subparamlist = null;
+        identacion=1;
+    }
+
+    public void setIdentacion(int identacion) {
+        this.identacion = identacion;
     }
 
     public void setId(String id) {
@@ -17,7 +23,7 @@ public class Proc_call {
 
     public String toString() {
         String s="";
-        s += id + subparamlist;
+        s += "<div style=\"text-indent:"+ identacion*1.5+"cm\">"+id + subparamlist+";</div>";
         return s;
     }
 }

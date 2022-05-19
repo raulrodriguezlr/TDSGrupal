@@ -30,8 +30,7 @@ public class Dcllist {
         else {
             for (Dcl aux : dcl) {
                 s += aux;
-            }
-        }
+            }}
         return s;
     }
     public String toString() {
@@ -50,33 +49,35 @@ public class Dcllist {
                 i = 0;
                 while (dcl.get(i).esSubRutina() == true) {
                     s += dcl.get(i).getDefSubrutina().subrutinaCompleta();
-                    i++;
-                }
+                    i++;}
                 while (i < dcl.size()) {
                     s += dcl.get(i);
-                    i++;
-                }
+                    i++;}
                 s += "<H2>Programa principal</H2> \n";
                 return s;
             } else {
                 int i = 0;
                 while (i < dcl.size() && dcl.get(i).esSubRutina() == false) {
-                    s += dcl.get(i);
-                    i++;
-                }
+                    //s += dcl.get(i);
+                    i++;}
                 int aux = i;
                 s += "\t" + "<H2> Funciones y procedimientos </H2>\n" + "\t" + cabecera + "\n";
                 while (i < dcl.size()) {
                     s += dcl.get(i);
-                    i++;
-                }
+                    i++;}
                 s += cola + "\n";
                 s += "<HR/>\n";
                 i = aux;
                 while (i < dcl.size()) {
                     s += dcl.get(i).getDefSubrutina().subrutinaCompleta();
-                    i++;
-                }
+                    i++;}
+                 i = 0;
+                //s += "<HR/>\n";
+                s += "\t" + "<A name= \"progPrinc\"></A>\n";
+                s += "\t" + "<div style=\"text-indent: 0cm\">"+"<H2> Programa principal</H2></div>\n";
+                while (i < dcl.size() && dcl.get(i).esSubRutina() == false) {
+                    s += dcl.get(i);
+                    i++;}
                 return s;
             }
         }

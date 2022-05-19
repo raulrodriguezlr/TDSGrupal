@@ -56,13 +56,13 @@ defcte returns[Defcte s]:
 
 ctelist returns[Ctelist s]:
     {$s=new Ctelist();} IDENTIFIER '=' simpvalue ';'
-        {$s.add($IDENTIFIER.text+" = "+$simpvalue.s+";\n");} ctelistAux[$s]
+        {$s.add($IDENTIFIER.text+" = "+$simpvalue.s);} ctelistAux[$s]
     ;
 
 ctelistAux [Ctelist h] returns[Ctelist s]:
      {$s=$h; }
     | IDENTIFIER '=' simpvalue ';'
-    {$h.add($IDENTIFIER.text+" = "+$simpvalue.s+";\n");}
+    {$h.add($IDENTIFIER.text+" = "+$simpvalue.s);}
     ctelistAux[$h]{$s=$h;}
     ;
 
@@ -150,7 +150,7 @@ oplog returns [String s]:
     ;
 
 factorcond [Factorcond h] returns [Factorcond s] :
-    exp[new Exp()] {$h.setExp1($exp.s);} opcomp {$h.setOpcomp($opcomp.s);} exp[new Exp()] {$h.setExp2($exp.s); $s=$h;}
+    exp[new Exp()] {$h.setExp2($exp.s);} opcomp {$h.setOpcomp($opcomp.s);} exp[new Exp()] {$h.setExp1($exp.s); $s=$h;}
     | '(' expcond[new Expcond()] {$h.setExpcond($expcond.s);} ')' {$s=$h;}
     | 'NOT' {$h.addString("NOT");} factorcond[$h] {$s = $factorcond.s;}
     | 'TRUE' {$h.addString("TRUE"); $s=$h;}

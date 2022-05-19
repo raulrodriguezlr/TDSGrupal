@@ -22,9 +22,9 @@ public class TDSGrupal {
                 TDSGrupalParser anasint = new TDSGrupalParser(tokens, datos);
 
 
-                String s= ("<!DOCTYPE html>\n<html>\n<head>\n\t<title>"+(String)args[0]+ ".html" +"</title>\n</head>\n<body>");
+                String s= ("<!DOCTYPE html>\n<html>\n<head>\n\t<title>"+(String)args[0]+ ".html" +"</title>\n<style>\n\t.cte {color: orange;}\n\t.palres{color: red;}\n\t.ident{color: green;}\n\t</style>\n</head>\n<body>");
                 PrintStream printStream = new PrintStream(new FileOutputStream((String)args[0]+".html"));
-                PrintStream stdout = System.out;//me guardo la salida por pantalla
+
                 System.setOut(printStream);
                 System.out.println(s);
                 anasint.axioma();

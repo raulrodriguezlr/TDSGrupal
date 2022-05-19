@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>programaProfe2.txt.html</title>
+	<title>programaProfe3.txt.html</title>
 <style>
 	.cte {color: orange;}
 	.palres{color: red;}
@@ -35,12 +35,23 @@
 	
 <div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm">Write('Enter Degrees C: ');</div>
 <div style="text-indent:1.5cm">Read(Celsius_temp );</div>
-<div style="text-indent: 1.5cm"><SPAN CLASS="palres"> IF </SPAN>Celsius_temp >=0<SPAN CLASS="palres"> THEN </SPAN></DIV>
-<div style="text-indent: 3cm">
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> IF </SPAN>Celsius_temp >=0<SPAN CLASS="palres"> THEN </SPAN></DIV>
+<div style="text-indent:0cm">
 <div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm">WriteLn('Positive input');</div>
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> IF </SPAN>Celsius_temp >=40.0<SPAN CLASS="palres"> THEN </SPAN></DIV>
+<div style="text-indent:0cm">
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm">WriteLn('Too hot ');</div>
 
 <div style="text-indent:0.0cm"><SPAN CLASS="palres"> END </SPAN></div></div>
-<div style="text-indent: 1.5cm"><SPAN CLASS="palres"> ELSE </SPAN>
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> ELSE </SPAN>
+
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm">WriteLn('Alright ');</div>
+
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> END </SPAN></div>
+<div style="text-indent:1.5cm">WriteLn('Temperature');</div>
+
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> END </SPAN></div></div>
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> ELSE </SPAN>
 
 <div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm">WriteLn('Negative input');</div>
 
@@ -77,13 +88,29 @@
 		<A NAME=Another_dummy1_function>FUNCTION Another_dummy1_function(dummy_variable: real) :integer</A>
 	</div>
 	
-<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent: 1.5cm"><SPAN CLASS="palres"> REPEAT </SPAN></div>
-<div style="text-indent: 1.5cm">
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:0.0cm"><SPAN CLASS="palres"> REPEAT </SPAN></div>
+<div style="text-indent:0.0cm">
 <div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm">sum:= sum + number ;</div>
 <div style="text-indent:1.5cm">number:= number DIV 2;</div>
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> REPEAT </SPAN></div>
+<div style="text-indent:0.0cm">
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:0.0cm"><SPAN CLASS="palres"> IF </SPAN>(sum =number )<SPAN CLASS="palres"> THEN </SPAN></DIV>
+<div style="text-indent:0cm">
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm">WriteLn('SUM = NUMBER');</div>
 
 <div style="text-indent:0.0cm"><SPAN CLASS="palres"> END </SPAN></div></div>
-<div style="text-indent: 1.5cm"><SPAN CLASS="palres"> UNTIL </SPAN>(number =0) OR (sum >20.25E2)</div>
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> ELSE </SPAN>
+
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm">WriteLn('SUM IS NOT = TO NUMBER');</div>
+
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> END </SPAN></div>
+<div style="text-indent:1.5cm">WriteLn('Repeating');</div>
+
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> END </SPAN></div></div>
+<div style="text-indent: 0.0cm"><SPAN CLASS="palres"> UNTIL </SPAN>(sum <=10)</div>
+
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> END </SPAN></div></div>
+<div style="text-indent: 0.0cm"><SPAN CLASS="palres"> UNTIL </SPAN>(number =0) OR (sum >20.25E2)</div>
 
 <div style="text-indent:0.0cm"><SPAN CLASS="palres"> END </SPAN></div>			<div style="text-indent: 1.5cm"><A HREF="#Another_dummy1_function">Inicio Subprograma</A></div>
 			<div style="text-indent: 1.5cm"><A HREF="#InicioPrograma">Inicio Programa</A></div>
@@ -111,11 +138,17 @@
 <div style="text-indent:1.5cm">m3:= +045.0e16;</div>
 <div style="text-indent:1.5cm">m4:= 0.03E+35;</div>
 <div style="text-indent:1.5cm">Write(ROUND (Fahrenheit_temp ));</div>
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> WHILE </SPAN></div>
+(i <10)<div style="text-indent: 1.5cm"><SPAN CLASS="palres"> DO </SPAN></div>
+<div style="text-indent:0cm">
+<div style="text-indent:3.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:4.5cm">Writeln(i );</div>
+
+<div style="text-indent:3.0cm"><SPAN CLASS="palres"> END </SPAN></div></div>
+
 
 <div style="text-indent:1.5cm"><SPAN CLASS="palres"> FOR </SPAN>i:= 1 TO 10<SPAN CLASS="palres"> DO </SPAN> </div>
 
 <div style="text-indent:3.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:4.5cm">Writeln(i );</div>
-<div style="text-indent:4.5cm">Writeln(i );</div>
 
 <div style="text-indent:3.0cm"><SPAN CLASS="palres"> END </SPAN></div>
 

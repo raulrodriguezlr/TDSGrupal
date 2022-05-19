@@ -28,7 +28,7 @@ public class Expcond {
                 while(i < factorlenght) {
                     if(i < oploglenght) {
                         s += factorcond.get(i);
-                        s += oplog.get(i);
+                        s +=" " +oplog.get(i)+" ";
                     }
                     else {
                         s += factorcond.get(i);
