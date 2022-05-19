@@ -294,6 +294,7 @@ public class TDSGrupalParser extends Parser {
 		public Dcllist h;
 		public Dcllist s;
 		public DclContext dcl;
+		public DcllistContext dcllist;
 		public DclContext dcl() {
 			return getRuleContext(DclContext.class,0);
 		}
@@ -340,8 +341,8 @@ public class TDSGrupalParser extends Parser {
 				                                _localctx.h.add(((DcllistContext)_localctx).dcl.s);
 				                                
 				setState(89);
-				dcllist(_localctx.h);
-				((DcllistContext)_localctx).s = _localctx.h;
+				((DcllistContext)_localctx).dcllist = dcllist(_localctx.h);
+				((DcllistContext)_localctx).s = ((DcllistContext)_localctx).dcllist.s;
 				}
 				break;
 			case T__3:
@@ -369,6 +370,7 @@ public class TDSGrupalParser extends Parser {
 		public Sentlist h;
 		public Sentlist s;
 		public SentContext sent;
+		public SentlistAuxContext sentlistAux;
 		public SentContext sent() {
 			return getRuleContext(SentContext.class,0);
 		}
@@ -406,8 +408,8 @@ public class TDSGrupalParser extends Parser {
 			((SentlistContext)_localctx).sent = sent();
 			_localctx.h.add(((SentlistContext)_localctx).sent.s);
 			setState(97);
-			sentlistAux(_localctx.h);
-			((SentlistContext)_localctx).s = _localctx.h;
+			((SentlistContext)_localctx).sentlistAux = sentlistAux(_localctx.h);
+			((SentlistContext)_localctx).s = ((SentlistContext)_localctx).sentlistAux.s;
 			}
 		}
 		catch (RecognitionException re) {
@@ -425,6 +427,7 @@ public class TDSGrupalParser extends Parser {
 		public Sentlist h;
 		public Sentlist s;
 		public SentContext sent;
+		public SentlistAuxContext sentlistAux;
 		public SentContext sent() {
 			return getRuleContext(SentContext.class,0);
 		}
@@ -476,8 +479,8 @@ public class TDSGrupalParser extends Parser {
 				((SentlistAuxContext)_localctx).sent = sent();
 				_localctx.h.add(((SentlistAuxContext)_localctx).sent.s);
 				setState(103);
-				sentlistAux(_localctx.h);
-				((SentlistAuxContext)_localctx).s = _localctx.h;
+				((SentlistAuxContext)_localctx).sentlistAux = sentlistAux(_localctx.h);
+				((SentlistAuxContext)_localctx).s = ((SentlistAuxContext)_localctx).sentlistAux.s;
 				}
 				break;
 			default:
@@ -681,7 +684,7 @@ public class TDSGrupalParser extends Parser {
 			((CtelistContext)_localctx).simpvalue = simpvalue();
 			setState(131);
 			match(T__1);
-			_localctx.s.add((((CtelistContext)_localctx).IDENTIFIER!=null?((CtelistContext)_localctx).IDENTIFIER.getText():null)+" = "+((CtelistContext)_localctx).simpvalue.s+";\n");
+			_localctx.s.add((((CtelistContext)_localctx).IDENTIFIER!=null?((CtelistContext)_localctx).IDENTIFIER.getText():null)+" = "+((CtelistContext)_localctx).simpvalue.s);
 			setState(133);
 			ctelistAux(_localctx.s);
 			}
@@ -758,7 +761,7 @@ public class TDSGrupalParser extends Parser {
 				((CtelistAuxContext)_localctx).simpvalue = simpvalue();
 				setState(139);
 				match(T__1);
-				_localctx.h.add((((CtelistAuxContext)_localctx).IDENTIFIER!=null?((CtelistAuxContext)_localctx).IDENTIFIER.getText():null)+" = "+((CtelistAuxContext)_localctx).simpvalue.s+";\n");
+				_localctx.h.add((((CtelistAuxContext)_localctx).IDENTIFIER!=null?((CtelistAuxContext)_localctx).IDENTIFIER.getText():null)+" = "+((CtelistAuxContext)_localctx).simpvalue.s);
 				setState(141);
 				ctelistAux(_localctx.h);
 				((CtelistAuxContext)_localctx).s = _localctx.h;
@@ -1698,6 +1701,7 @@ public class TDSGrupalParser extends Parser {
 		public Expcond h;
 		public Expcond s;
 		public FactorcondContext factorcond;
+		public ExpcondAuxContext expcondAux;
 		public FactorcondContext factorcond() {
 			return getRuleContext(FactorcondContext.class,0);
 		}
@@ -1734,9 +1738,10 @@ public class TDSGrupalParser extends Parser {
 			((ExpcondContext)_localctx).s =  new Expcond();
 			setState(290);
 			((ExpcondContext)_localctx).factorcond = factorcond(new Factorcond());
-			_localctx.s.addFactorcond(((ExpcondContext)_localctx).factorcond.s);
+			_localctx.h.addFactorcond(((ExpcondContext)_localctx).factorcond.s);
 			setState(292);
-			expcondAux(_localctx.s);
+			((ExpcondContext)_localctx).expcondAux = expcondAux(_localctx.h);
+			((ExpcondContext)_localctx).s =  ((ExpcondContext)_localctx).expcondAux.s;
 			}
 		}
 		catch (RecognitionException re) {
@@ -1790,18 +1795,18 @@ public class TDSGrupalParser extends Parser {
 		ExpcondAuxContext _localctx = new ExpcondAuxContext(_ctx, getState(), h);
 		enterRule(_localctx, 46, RULE_expcondAux);
 		try {
-			setState(301);
+			setState(302);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,12,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(294);
+				setState(295);
 				((ExpcondAuxContext)_localctx).oplog = oplog();
 				_localctx.h.addOplog(((ExpcondAuxContext)_localctx).oplog.s);
-				setState(296);
-				((ExpcondAuxContext)_localctx).expcond = expcond(_localctx.h);
 				setState(297);
+				((ExpcondAuxContext)_localctx).expcond = expcond(_localctx.h);
+				setState(298);
 				((ExpcondAuxContext)_localctx).expcondAux = expcondAux(((ExpcondAuxContext)_localctx).expcond.s);
 				((ExpcondAuxContext)_localctx).s = ((ExpcondAuxContext)_localctx).expcondAux.s;
 				}
@@ -1850,13 +1855,13 @@ public class TDSGrupalParser extends Parser {
 		OplogContext _localctx = new OplogContext(_ctx, getState());
 		enterRule(_localctx, 48, RULE_oplog);
 		try {
-			setState(307);
+			setState(308);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__27:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(303);
+				setState(304);
 				match(T__27);
 				((OplogContext)_localctx).s =  "OR";
 				}
@@ -1864,7 +1869,7 @@ public class TDSGrupalParser extends Parser {
 			case T__28:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(305);
+				setState(306);
 				match(T__28);
 				((OplogContext)_localctx).s =  "AND";
 				}
@@ -1931,19 +1936,19 @@ public class TDSGrupalParser extends Parser {
 		FactorcondContext _localctx = new FactorcondContext(_ctx, getState(), h);
 		enterRule(_localctx, 50, RULE_factorcond);
 		try {
-			setState(331);
+			setState(332);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(309);
+				setState(310);
 				((FactorcondContext)_localctx).exp = exp(new Exp());
-				_localctx.h.setExp1(((FactorcondContext)_localctx).exp.s);
-				setState(311);
+				_localctx.h.setExp2(((FactorcondContext)_localctx).exp.s);
+				setState(312);
 				((FactorcondContext)_localctx).opcomp = opcomp();
 				_localctx.h.setOpcomp(((FactorcondContext)_localctx).opcomp.s);
-				setState(313);
+				setState(314);
 				((FactorcondContext)_localctx).exp = exp(new Exp());
 				_localctx.h.setExp1(((FactorcondContext)_localctx).exp.s); ((FactorcondContext)_localctx).s = _localctx.h;
 				}
@@ -1951,12 +1956,12 @@ public class TDSGrupalParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(316);
-				match(T__12);
 				setState(317);
+				match(T__12);
+				setState(318);
 				((FactorcondContext)_localctx).expcond = expcond(new Expcond());
 				_localctx.h.setExpcond(((FactorcondContext)_localctx).expcond.s);
-				setState(319);
+				setState(320);
 				match(T__13);
 				((FactorcondContext)_localctx).s = _localctx.h;
 				}
@@ -1964,10 +1969,10 @@ public class TDSGrupalParser extends Parser {
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(322);
+				setState(323);
 				match(T__29);
 				_localctx.h.addString("NOT");
-				setState(324);
+				setState(325);
 				((FactorcondContext)_localctx).factorcond = factorcond(_localctx.h);
 				((FactorcondContext)_localctx).s =  ((FactorcondContext)_localctx).factorcond.s;
 				}
@@ -1975,7 +1980,7 @@ public class TDSGrupalParser extends Parser {
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(327);
+				setState(328);
 				match(T__30);
 				_localctx.h.addString("TRUE"); ((FactorcondContext)_localctx).s = _localctx.h;
 				}
@@ -1983,7 +1988,7 @@ public class TDSGrupalParser extends Parser {
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(329);
+				setState(330);
 				match(T__31);
 				_localctx.h.addString("FALSE"); ((FactorcondContext)_localctx).s = _localctx.h;
 				}
@@ -2026,13 +2031,13 @@ public class TDSGrupalParser extends Parser {
 		OpcompContext _localctx = new OpcompContext(_ctx, getState());
 		enterRule(_localctx, 52, RULE_opcomp);
 		try {
-			setState(343);
+			setState(344);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__32:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(333);
+				setState(334);
 				match(T__32);
 				((OpcompContext)_localctx).s =  "<";
 				}
@@ -2040,7 +2045,7 @@ public class TDSGrupalParser extends Parser {
 			case T__33:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(335);
+				setState(336);
 				match(T__33);
 				((OpcompContext)_localctx).s =  ">";
 				}
@@ -2048,7 +2053,7 @@ public class TDSGrupalParser extends Parser {
 			case T__34:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(337);
+				setState(338);
 				match(T__34);
 				((OpcompContext)_localctx).s =  "<=";
 				}
@@ -2056,7 +2061,7 @@ public class TDSGrupalParser extends Parser {
 			case T__35:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(339);
+				setState(340);
 				match(T__35);
 				((OpcompContext)_localctx).s =  ">=";
 				}
@@ -2064,7 +2069,7 @@ public class TDSGrupalParser extends Parser {
 			case T__6:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(341);
+				setState(342);
 				match(T__6);
 				((OpcompContext)_localctx).s =  "=";
 				}
@@ -2117,11 +2122,11 @@ public class TDSGrupalParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(345);
-			((AsigContext)_localctx).IDENTIFIER = match(IDENTIFIER);
 			setState(346);
-			match(T__24);
+			((AsigContext)_localctx).IDENTIFIER = match(IDENTIFIER);
 			setState(347);
+			match(T__24);
+			setState(348);
 			((AsigContext)_localctx).exp = exp(new Exp());
 			((AsigContext)_localctx).s =  new Asig(); _localctx.s.setId((((AsigContext)_localctx).IDENTIFIER!=null?((AsigContext)_localctx).IDENTIFIER.getText():null)); _localctx.s.setExp(((AsigContext)_localctx).exp.s);
 			}
@@ -2176,19 +2181,19 @@ public class TDSGrupalParser extends Parser {
 		ExpContext _localctx = new ExpContext(_ctx, getState(), h);
 		enterRule(_localctx, 56, RULE_exp);
 		try {
-			setState(360);
+			setState(361);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,16,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(350);
+				setState(351);
 				((ExpContext)_localctx).factor = factor();
 				_localctx.h.addFactor(((ExpContext)_localctx).factor.s);
-				setState(352);
+				setState(353);
 				((ExpContext)_localctx).op = op();
 				_localctx.h.addOp(((ExpContext)_localctx).op.s);
-				setState(354);
+				setState(355);
 				exp(_localctx.h);
 				((ExpContext)_localctx).s = _localctx.h;
 				}
@@ -2196,7 +2201,7 @@ public class TDSGrupalParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(357);
+				setState(358);
 				((ExpContext)_localctx).factor = factor();
 				_localctx.h.addFactor(((ExpContext)_localctx).factor.s); ((ExpContext)_localctx).s = _localctx.h;
 				}
@@ -2239,13 +2244,13 @@ public class TDSGrupalParser extends Parser {
 		OpContext _localctx = new OpContext(_ctx, getState());
 		enterRule(_localctx, 58, RULE_op);
 		try {
-			setState(372);
+			setState(373);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__36:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(362);
+				setState(363);
 				match(T__36);
 				((OpContext)_localctx).s =  "+";
 				}
@@ -2253,7 +2258,7 @@ public class TDSGrupalParser extends Parser {
 			case T__37:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(364);
+				setState(365);
 				match(T__37);
 				((OpContext)_localctx).s =  "-";
 				}
@@ -2261,7 +2266,7 @@ public class TDSGrupalParser extends Parser {
 			case T__38:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(366);
+				setState(367);
 				match(T__38);
 				((OpContext)_localctx).s =  "*";
 				}
@@ -2269,7 +2274,7 @@ public class TDSGrupalParser extends Parser {
 			case T__39:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(368);
+				setState(369);
 				match(T__39);
 				((OpContext)_localctx).s =  "DIV";
 				}
@@ -2277,7 +2282,7 @@ public class TDSGrupalParser extends Parser {
 			case T__40:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(370);
+				setState(371);
 				match(T__40);
 				((OpContext)_localctx).s =  "MOD";
 				}
@@ -2336,7 +2341,7 @@ public class TDSGrupalParser extends Parser {
 		FactorContext _localctx = new FactorContext(_ctx, getState());
 		enterRule(_localctx, 60, RULE_factor);
 		try {
-			setState(386);
+			setState(387);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case NUMERIC_INTEGER_CONST:
@@ -2344,7 +2349,7 @@ public class TDSGrupalParser extends Parser {
 			case STRING_CONST:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(374);
+				setState(375);
 				((FactorContext)_localctx).simpvalue = simpvalue();
 				((FactorContext)_localctx).s =  new Factor(); _localctx.s.setSimpvalue(((FactorContext)_localctx).simpvalue.s);
 				}
@@ -2352,11 +2357,11 @@ public class TDSGrupalParser extends Parser {
 			case T__12:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(377);
-				match(T__12);
 				setState(378);
-				((FactorContext)_localctx).exp = exp(new Exp());
+				match(T__12);
 				setState(379);
+				((FactorContext)_localctx).exp = exp(new Exp());
+				setState(380);
 				match(T__13);
 				((FactorContext)_localctx).s =  new Factor(); _localctx.s.setExp(((FactorContext)_localctx).exp.s); 
 				}
@@ -2364,9 +2369,9 @@ public class TDSGrupalParser extends Parser {
 			case IDENTIFIER:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(382);
-				((FactorContext)_localctx).IDENTIFIER = match(IDENTIFIER);
 				setState(383);
+				((FactorContext)_localctx).IDENTIFIER = match(IDENTIFIER);
+				setState(384);
 				((FactorContext)_localctx).subpparamlist = subpparamlist();
 				((FactorContext)_localctx).s =  new Factor(); _localctx.s.setId((((FactorContext)_localctx).IDENTIFIER!=null?((FactorContext)_localctx).IDENTIFIER.getText():null)); _localctx.s.setSubparamlist(((FactorContext)_localctx).subpparamlist.s);
 				}
@@ -2415,7 +2420,7 @@ public class TDSGrupalParser extends Parser {
 		SubpparamlistContext _localctx = new SubpparamlistContext(_ctx, getState());
 		enterRule(_localctx, 62, RULE_subpparamlist);
 		try {
-			setState(394);
+			setState(395);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__1:
@@ -2445,11 +2450,11 @@ public class TDSGrupalParser extends Parser {
 			case T__12:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(389);
-				match(T__12);
 				setState(390);
-				((SubpparamlistContext)_localctx).explist = explist(new Explist());
+				match(T__12);
 				setState(391);
+				((SubpparamlistContext)_localctx).explist = explist(new Explist());
+				setState(392);
 				match(T__13);
 				((SubpparamlistContext)_localctx).s =  new Subparamlist(); _localctx.s.setExplist(((SubpparamlistContext)_localctx).explist.s);
 				}
@@ -2505,13 +2510,13 @@ public class TDSGrupalParser extends Parser {
 		ExplistContext _localctx = new ExplistContext(_ctx, getState(), h);
 		enterRule(_localctx, 64, RULE_explist);
 		try {
-			setState(404);
+			setState(405);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,20,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(396);
+				setState(397);
 				((ExplistContext)_localctx).exp = exp(new Exp());
 				_localctx.h.add(((ExplistContext)_localctx).exp.s); ((ExplistContext)_localctx).s = _localctx.h;
 				}
@@ -2519,11 +2524,11 @@ public class TDSGrupalParser extends Parser {
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(399);
-				((ExplistContext)_localctx).exp = exp(new Exp());
 				setState(400);
-				match(T__9);
+				((ExplistContext)_localctx).exp = exp(new Exp());
 				setState(401);
+				match(T__9);
+				setState(402);
 				((ExplistContext)_localctx).explist = explist(new Explist());
 				((ExplistContext)_localctx).explist.s.insertarPrincipio(((ExplistContext)_localctx).exp.s); ((ExplistContext)_localctx).s =  ((ExplistContext)_localctx).explist.s;
 				}
@@ -2574,9 +2579,9 @@ public class TDSGrupalParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(406);
-			((Proc_callContext)_localctx).IDENTIFIER = match(IDENTIFIER);
 			setState(407);
+			((Proc_callContext)_localctx).IDENTIFIER = match(IDENTIFIER);
+			setState(408);
 			((Proc_callContext)_localctx).subpparamlist = subpparamlist();
 			((Proc_callContext)_localctx).s = new Proc_call(); _localctx.s.setId((((Proc_callContext)_localctx).IDENTIFIER!=null?((Proc_callContext)_localctx).IDENTIFIER.getText():null)); _localctx.s.setSubparamlist(((Proc_callContext)_localctx).subpparamlist.s);
 			}
@@ -2593,7 +2598,7 @@ public class TDSGrupalParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\63\u019d\4\2\t\2"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\63\u019e\4\2\t\2"+
 		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -2614,23 +2619,23 @@ public class TDSGrupalParser extends Parser {
 		"\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3"+
 		"\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\5"+
 		"\26\u011c\n\26\3\27\3\27\3\27\3\27\5\27\u0122\n\27\3\30\3\30\3\30\3\30"+
-		"\3\30\3\31\3\31\3\31\3\31\3\31\3\31\3\31\5\31\u0130\n\31\3\32\3\32\3\32"+
-		"\3\32\5\32\u0136\n\32\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33"+
-		"\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\5\33\u014e"+
-		"\n\33\3\34\3\34\3\34\3\34\3\34\3\34\3\34\3\34\3\34\3\34\5\34\u015a\n\34"+
-		"\3\35\3\35\3\35\3\35\3\35\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36"+
-		"\3\36\5\36\u016b\n\36\3\37\3\37\3\37\3\37\3\37\3\37\3\37\3\37\3\37\3\37"+
-		"\5\37\u0177\n\37\3 \3 \3 \3 \3 \3 \3 \3 \3 \3 \3 \3 \5 \u0185\n \3!\3"+
-		"!\3!\3!\3!\3!\5!\u018d\n!\3\"\3\"\3\"\3\"\3\"\3\"\3\"\3\"\5\"\u0197\n"+
-		"\"\3#\3#\3#\3#\3#\2\2$\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,"+
-		".\60\62\64\668:<>@BD\2\2\2\u01a0\2F\3\2\2\2\4I\3\2\2\2\6Q\3\2\2\2\b_\3"+
-		"\2\2\2\na\3\2\2\2\fl\3\2\2\2\16z\3\2\2\2\20|\3\2\2\2\22\u0081\3\2\2\2"+
-		"\24\u0092\3\2\2\2\26\u009a\3\2\2\2\30\u009c\3\2\2\2\32\u00a1\3\2\2\2\34"+
-		"\u00b2\3\2\2\2\36\u00bc\3\2\2\2 \u00be\3\2\2\2\"\u00c6\3\2\2\2$\u00d6"+
+		"\3\30\3\30\3\31\3\31\3\31\3\31\3\31\3\31\3\31\5\31\u0131\n\31\3\32\3\32"+
+		"\3\32\3\32\5\32\u0137\n\32\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33"+
+		"\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\3\33\5\33"+
+		"\u014f\n\33\3\34\3\34\3\34\3\34\3\34\3\34\3\34\3\34\3\34\3\34\5\34\u015b"+
+		"\n\34\3\35\3\35\3\35\3\35\3\35\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36"+
+		"\3\36\3\36\5\36\u016c\n\36\3\37\3\37\3\37\3\37\3\37\3\37\3\37\3\37\3\37"+
+		"\3\37\5\37\u0178\n\37\3 \3 \3 \3 \3 \3 \3 \3 \3 \3 \3 \3 \5 \u0186\n "+
+		"\3!\3!\3!\3!\3!\3!\5!\u018e\n!\3\"\3\"\3\"\3\"\3\"\3\"\3\"\3\"\5\"\u0198"+
+		"\n\"\3#\3#\3#\3#\3#\2\2$\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&("+
+		"*,.\60\62\64\668:<>@BD\2\2\2\u01a1\2F\3\2\2\2\4I\3\2\2\2\6Q\3\2\2\2\b"+
+		"_\3\2\2\2\na\3\2\2\2\fl\3\2\2\2\16z\3\2\2\2\20|\3\2\2\2\22\u0081\3\2\2"+
+		"\2\24\u0092\3\2\2\2\26\u009a\3\2\2\2\30\u009c\3\2\2\2\32\u00a1\3\2\2\2"+
+		"\34\u00b2\3\2\2\2\36\u00bc\3\2\2\2 \u00be\3\2\2\2\"\u00c6\3\2\2\2$\u00d6"+
 		"\3\2\2\2&\u00e5\3\2\2\2(\u00eb\3\2\2\2*\u011b\3\2\2\2,\u0121\3\2\2\2."+
-		"\u0123\3\2\2\2\60\u012f\3\2\2\2\62\u0135\3\2\2\2\64\u014d\3\2\2\2\66\u0159"+
-		"\3\2\2\28\u015b\3\2\2\2:\u016a\3\2\2\2<\u0176\3\2\2\2>\u0184\3\2\2\2@"+
-		"\u018c\3\2\2\2B\u0196\3\2\2\2D\u0198\3\2\2\2FG\5\4\3\2GH\b\2\1\2H\3\3"+
+		"\u0123\3\2\2\2\60\u0130\3\2\2\2\62\u0136\3\2\2\2\64\u014e\3\2\2\2\66\u015a"+
+		"\3\2\2\28\u015c\3\2\2\2:\u016b\3\2\2\2<\u0177\3\2\2\2>\u0185\3\2\2\2@"+
+		"\u018d\3\2\2\2B\u0197\3\2\2\2D\u0199\3\2\2\2FG\5\4\3\2GH\b\2\1\2H\3\3"+
 		"\2\2\2IJ\7\3\2\2JK\7,\2\2KL\b\3\1\2LM\7\4\2\2MN\5\6\4\2NO\b\3\1\2OP\7"+
 		"\5\2\2P\5\3\2\2\2QR\b\4\1\2RS\5\b\5\2ST\b\4\1\2TU\7\6\2\2UV\5\n\6\2VW"+
 		"\b\4\1\2WX\7\7\2\2X\7\3\2\2\2YZ\5\16\b\2Z[\b\5\1\2[\\\5\b\5\2\\]\b\5\1"+
@@ -2691,46 +2696,47 @@ public class TDSGrupalParser extends Parser {
 		"\2\2\u011c+\3\2\2\2\u011d\u011e\7\34\2\2\u011e\u0122\b\27\1\2\u011f\u0120"+
 		"\7\35\2\2\u0120\u0122\b\27\1\2\u0121\u011d\3\2\2\2\u0121\u011f\3\2\2\2"+
 		"\u0122-\3\2\2\2\u0123\u0124\b\30\1\2\u0124\u0125\5\64\33\2\u0125\u0126"+
-		"\b\30\1\2\u0126\u0127\5\60\31\2\u0127/\3\2\2\2\u0128\u0129\5\62\32\2\u0129"+
-		"\u012a\b\31\1\2\u012a\u012b\5.\30\2\u012b\u012c\5\60\31\2\u012c\u012d"+
-		"\b\31\1\2\u012d\u0130\3\2\2\2\u012e\u0130\b\31\1\2\u012f\u0128\3\2\2\2"+
-		"\u012f\u012e\3\2\2\2\u0130\61\3\2\2\2\u0131\u0132\7\36\2\2\u0132\u0136"+
-		"\b\32\1\2\u0133\u0134\7\37\2\2\u0134\u0136\b\32\1\2\u0135\u0131\3\2\2"+
-		"\2\u0135\u0133\3\2\2\2\u0136\63\3\2\2\2\u0137\u0138\5:\36\2\u0138\u0139"+
-		"\b\33\1\2\u0139\u013a\5\66\34\2\u013a\u013b\b\33\1\2\u013b\u013c\5:\36"+
-		"\2\u013c\u013d\b\33\1\2\u013d\u014e\3\2\2\2\u013e\u013f\7\17\2\2\u013f"+
-		"\u0140\5.\30\2\u0140\u0141\b\33\1\2\u0141\u0142\7\20\2\2\u0142\u0143\b"+
-		"\33\1\2\u0143\u014e\3\2\2\2\u0144\u0145\7 \2\2\u0145\u0146\b\33\1\2\u0146"+
-		"\u0147\5\64\33\2\u0147\u0148\b\33\1\2\u0148\u014e\3\2\2\2\u0149\u014a"+
-		"\7!\2\2\u014a\u014e\b\33\1\2\u014b\u014c\7\"\2\2\u014c\u014e\b\33\1\2"+
-		"\u014d\u0137\3\2\2\2\u014d\u013e\3\2\2\2\u014d\u0144\3\2\2\2\u014d\u0149"+
-		"\3\2\2\2\u014d\u014b\3\2\2\2\u014e\65\3\2\2\2\u014f\u0150\7#\2\2\u0150"+
-		"\u015a\b\34\1\2\u0151\u0152\7$\2\2\u0152\u015a\b\34\1\2\u0153\u0154\7"+
-		"%\2\2\u0154\u015a\b\34\1\2\u0155\u0156\7&\2\2\u0156\u015a\b\34\1\2\u0157"+
-		"\u0158\7\t\2\2\u0158\u015a\b\34\1\2\u0159\u014f\3\2\2\2\u0159\u0151\3"+
-		"\2\2\2\u0159\u0153\3\2\2\2\u0159\u0155\3\2\2\2\u0159\u0157\3\2\2\2\u015a"+
-		"\67\3\2\2\2\u015b\u015c\7,\2\2\u015c\u015d\7\33\2\2\u015d\u015e\5:\36"+
-		"\2\u015e\u015f\b\35\1\2\u015f9\3\2\2\2\u0160\u0161\5> \2\u0161\u0162\b"+
-		"\36\1\2\u0162\u0163\5<\37\2\u0163\u0164\b\36\1\2\u0164\u0165\5:\36\2\u0165"+
-		"\u0166\b\36\1\2\u0166\u016b\3\2\2\2\u0167\u0168\5> \2\u0168\u0169\b\36"+
-		"\1\2\u0169\u016b\3\2\2\2\u016a\u0160\3\2\2\2\u016a\u0167\3\2\2\2\u016b"+
-		";\3\2\2\2\u016c\u016d\7\'\2\2\u016d\u0177\b\37\1\2\u016e\u016f\7(\2\2"+
-		"\u016f\u0177\b\37\1\2\u0170\u0171\7)\2\2\u0171\u0177\b\37\1\2\u0172\u0173"+
-		"\7*\2\2\u0173\u0177\b\37\1\2\u0174\u0175\7+\2\2\u0175\u0177\b\37\1\2\u0176"+
-		"\u016c\3\2\2\2\u0176\u016e\3\2\2\2\u0176\u0170\3\2\2\2\u0176\u0172\3\2"+
-		"\2\2\u0176\u0174\3\2\2\2\u0177=\3\2\2\2\u0178\u0179\5\26\f\2\u0179\u017a"+
-		"\b \1\2\u017a\u0185\3\2\2\2\u017b\u017c\7\17\2\2\u017c\u017d\5:\36\2\u017d"+
-		"\u017e\7\20\2\2\u017e\u017f\b \1\2\u017f\u0185\3\2\2\2\u0180\u0181\7,"+
-		"\2\2\u0181\u0182\5@!\2\u0182\u0183\b \1\2\u0183\u0185\3\2\2\2\u0184\u0178"+
-		"\3\2\2\2\u0184\u017b\3\2\2\2\u0184\u0180\3\2\2\2\u0185?\3\2\2\2\u0186"+
-		"\u018d\b!\1\2\u0187\u0188\7\17\2\2\u0188\u0189\5B\"\2\u0189\u018a\7\20"+
-		"\2\2\u018a\u018b\b!\1\2\u018b\u018d\3\2\2\2\u018c\u0186\3\2\2\2\u018c"+
-		"\u0187\3\2\2\2\u018dA\3\2\2\2\u018e\u018f\5:\36\2\u018f\u0190\b\"\1\2"+
-		"\u0190\u0197\3\2\2\2\u0191\u0192\5:\36\2\u0192\u0193\7\f\2\2\u0193\u0194"+
-		"\5B\"\2\u0194\u0195\b\"\1\2\u0195\u0197\3\2\2\2\u0196\u018e\3\2\2\2\u0196"+
-		"\u0191\3\2\2\2\u0197C\3\2\2\2\u0198\u0199\7,\2\2\u0199\u019a\5@!\2\u019a"+
-		"\u019b\b#\1\2\u019bE\3\2\2\2\27_lz\u0092\u009a\u00b2\u00bc\u00d6\u00e5"+
-		"\u00eb\u011b\u0121\u012f\u0135\u014d\u0159\u016a\u0176\u0184\u018c\u0196";
+		"\b\30\1\2\u0126\u0127\5\60\31\2\u0127\u0128\b\30\1\2\u0128/\3\2\2\2\u0129"+
+		"\u012a\5\62\32\2\u012a\u012b\b\31\1\2\u012b\u012c\5.\30\2\u012c\u012d"+
+		"\5\60\31\2\u012d\u012e\b\31\1\2\u012e\u0131\3\2\2\2\u012f\u0131\b\31\1"+
+		"\2\u0130\u0129\3\2\2\2\u0130\u012f\3\2\2\2\u0131\61\3\2\2\2\u0132\u0133"+
+		"\7\36\2\2\u0133\u0137\b\32\1\2\u0134\u0135\7\37\2\2\u0135\u0137\b\32\1"+
+		"\2\u0136\u0132\3\2\2\2\u0136\u0134\3\2\2\2\u0137\63\3\2\2\2\u0138\u0139"+
+		"\5:\36\2\u0139\u013a\b\33\1\2\u013a\u013b\5\66\34\2\u013b\u013c\b\33\1"+
+		"\2\u013c\u013d\5:\36\2\u013d\u013e\b\33\1\2\u013e\u014f\3\2\2\2\u013f"+
+		"\u0140\7\17\2\2\u0140\u0141\5.\30\2\u0141\u0142\b\33\1\2\u0142\u0143\7"+
+		"\20\2\2\u0143\u0144\b\33\1\2\u0144\u014f\3\2\2\2\u0145\u0146\7 \2\2\u0146"+
+		"\u0147\b\33\1\2\u0147\u0148\5\64\33\2\u0148\u0149\b\33\1\2\u0149\u014f"+
+		"\3\2\2\2\u014a\u014b\7!\2\2\u014b\u014f\b\33\1\2\u014c\u014d\7\"\2\2\u014d"+
+		"\u014f\b\33\1\2\u014e\u0138\3\2\2\2\u014e\u013f\3\2\2\2\u014e\u0145\3"+
+		"\2\2\2\u014e\u014a\3\2\2\2\u014e\u014c\3\2\2\2\u014f\65\3\2\2\2\u0150"+
+		"\u0151\7#\2\2\u0151\u015b\b\34\1\2\u0152\u0153\7$\2\2\u0153\u015b\b\34"+
+		"\1\2\u0154\u0155\7%\2\2\u0155\u015b\b\34\1\2\u0156\u0157\7&\2\2\u0157"+
+		"\u015b\b\34\1\2\u0158\u0159\7\t\2\2\u0159\u015b\b\34\1\2\u015a\u0150\3"+
+		"\2\2\2\u015a\u0152\3\2\2\2\u015a\u0154\3\2\2\2\u015a\u0156\3\2\2\2\u015a"+
+		"\u0158\3\2\2\2\u015b\67\3\2\2\2\u015c\u015d\7,\2\2\u015d\u015e\7\33\2"+
+		"\2\u015e\u015f\5:\36\2\u015f\u0160\b\35\1\2\u01609\3\2\2\2\u0161\u0162"+
+		"\5> \2\u0162\u0163\b\36\1\2\u0163\u0164\5<\37\2\u0164\u0165\b\36\1\2\u0165"+
+		"\u0166\5:\36\2\u0166\u0167\b\36\1\2\u0167\u016c\3\2\2\2\u0168\u0169\5"+
+		"> \2\u0169\u016a\b\36\1\2\u016a\u016c\3\2\2\2\u016b\u0161\3\2\2\2\u016b"+
+		"\u0168\3\2\2\2\u016c;\3\2\2\2\u016d\u016e\7\'\2\2\u016e\u0178\b\37\1\2"+
+		"\u016f\u0170\7(\2\2\u0170\u0178\b\37\1\2\u0171\u0172\7)\2\2\u0172\u0178"+
+		"\b\37\1\2\u0173\u0174\7*\2\2\u0174\u0178\b\37\1\2\u0175\u0176\7+\2\2\u0176"+
+		"\u0178\b\37\1\2\u0177\u016d\3\2\2\2\u0177\u016f\3\2\2\2\u0177\u0171\3"+
+		"\2\2\2\u0177\u0173\3\2\2\2\u0177\u0175\3\2\2\2\u0178=\3\2\2\2\u0179\u017a"+
+		"\5\26\f\2\u017a\u017b\b \1\2\u017b\u0186\3\2\2\2\u017c\u017d\7\17\2\2"+
+		"\u017d\u017e\5:\36\2\u017e\u017f\7\20\2\2\u017f\u0180\b \1\2\u0180\u0186"+
+		"\3\2\2\2\u0181\u0182\7,\2\2\u0182\u0183\5@!\2\u0183\u0184\b \1\2\u0184"+
+		"\u0186\3\2\2\2\u0185\u0179\3\2\2\2\u0185\u017c\3\2\2\2\u0185\u0181\3\2"+
+		"\2\2\u0186?\3\2\2\2\u0187\u018e\b!\1\2\u0188\u0189\7\17\2\2\u0189\u018a"+
+		"\5B\"\2\u018a\u018b\7\20\2\2\u018b\u018c\b!\1\2\u018c\u018e\3\2\2\2\u018d"+
+		"\u0187\3\2\2\2\u018d\u0188\3\2\2\2\u018eA\3\2\2\2\u018f\u0190\5:\36\2"+
+		"\u0190\u0191\b\"\1\2\u0191\u0198\3\2\2\2\u0192\u0193\5:\36\2\u0193\u0194"+
+		"\7\f\2\2\u0194\u0195\5B\"\2\u0195\u0196\b\"\1\2\u0196\u0198\3\2\2\2\u0197"+
+		"\u018f\3\2\2\2\u0197\u0192\3\2\2\2\u0198C\3\2\2\2\u0199\u019a\7,\2\2\u019a"+
+		"\u019b\5@!\2\u019b\u019c\b#\1\2\u019cE\3\2\2\2\27_lz\u0092\u009a\u00b2"+
+		"\u00bc\u00d6\u00e5\u00eb\u011b\u0121\u0130\u0136\u014e\u015a\u016b\u0177"+
+		"\u0185\u018d\u0197";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

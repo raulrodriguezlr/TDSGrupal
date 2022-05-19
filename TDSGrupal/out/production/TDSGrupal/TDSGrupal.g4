@@ -24,21 +24,22 @@ blq returns [Blq s] :
     {$s=new Blq("","");}
     dcllist[new Dcllist()] {$s.setDcllist($dcllist.s);}
     'BEGIN' sentlist[new Sentlist()] {$s.setSentlist($sentlist.s);}
-    'END' ;
+    'END'
+    ;
 
 dcllist [Dcllist h] returns [Dcllist s]:  dcl{
                                 $h.add($dcl.s);
                                 }
-                                dcllist[$h]{$s=$h;}
+                                dcllist[$h]{$s=$dcllist.s;}
                                 | {$s=$h; };
 
 sentlist [Sentlist h] returns [Sentlist s] :
-    sent {$h.add($sent.s);} sentlistAux[$h]{$s=$h;}
+    sent {$h.add($sent.s);} sentlistAux[$h]{$s=$sentlistAux.s;}
     ;
 
 sentlistAux [Sentlist h] returns [Sentlist s]:
     {$s=$h;}
-    | sent {$h.add($sent.s);} sentlistAux[$h]{$s=$h;}
+    | sent {$h.add($sent.s);} sentlistAux[$h]{$s=$sentlistAux.s;}
     ;
 
 //---------------------------------------
@@ -55,13 +56,13 @@ defcte returns[Defcte s]:
 
 ctelist returns[Ctelist s]:
     {$s=new Ctelist();} IDENTIFIER '=' simpvalue ';'
-        {$s.add($IDENTIFIER.text+" = "+$simpvalue.s+";\n");} ctelistAux[$s]
+        {$s.add($IDENTIFIER.text+" = "+$simpvalue.s);} ctelistAux[$s]
     ;
 
 ctelistAux [Ctelist h] returns[Ctelist s]:
      {$s=$h; }
     | IDENTIFIER '=' simpvalue ';'
-    {$h.add($IDENTIFIER.text+" = "+$simpvalue.s+";\n");}
+    {$h.add($IDENTIFIER.text+" = "+$simpvalue.s);}
     ctelistAux[$h]{$s=$h;}
     ;
 
@@ -135,7 +136,7 @@ inc returns [String s] :
     ;
 
 expcond [Expcond h] returns [Expcond s] :
-    {$s = new Expcond();} factorcond[new Factorcond()] {$s.addFactorcond($factorcond.s);} expcondAux[$s]
+    {$s = new Expcond();} factorcond[new Factorcond()] {$h.addFactorcond($factorcond.s);} expcondAux[$h] {$s = $expcondAux.s;}
     ;
 
 expcondAux [Expcond h] returns [Expcond s] :
@@ -149,7 +150,7 @@ oplog returns [String s]:
     ;
 
 factorcond [Factorcond h] returns [Factorcond s] :
-    exp[new Exp()]{$h.setExp1($exp.s);} opcomp {$h.setOpcomp($opcomp.s);} exp[new Exp()] {$h.setExp1($exp.s); $s=$h;}
+    exp[new Exp()] {$h.setExp2($exp.s);} opcomp {$h.setOpcomp($opcomp.s);} exp[new Exp()] {$h.setExp1($exp.s); $s=$h;}
     | '(' expcond[new Expcond()] {$h.setExpcond($expcond.s);} ')' {$s=$h;}
     | 'NOT' {$h.addString("NOT");} factorcond[$h] {$s = $factorcond.s;}
     | 'TRUE' {$h.addString("TRUE"); $s=$h;}

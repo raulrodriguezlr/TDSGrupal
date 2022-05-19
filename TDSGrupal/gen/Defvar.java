@@ -17,8 +17,8 @@ public class Defvar {
         if(defvarlist.getVarlist().isEmpty()){
             return "";
         }
-        String s ="<div>"+cabecera+"</div>\n";
-        s += defvarlist;
+        String s ="<div style=\"text-indent: 0cm\">"+cabecera+"</div>\n<div style=\"text-indent: 1.5cm\">"+defvarlist+"</div>";
+        //s += defvarlist;
 
         return s;
     }

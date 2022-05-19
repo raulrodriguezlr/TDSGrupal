@@ -9,6 +9,9 @@ public class Blq {
         this.cola=cola;
         dcllist=null;
     }
+    public Sentlist getSentlist(){
+        return sentlist;
+    }
 
     public void setDcllist(Dcllist aux){
         this.dcllist=aux;

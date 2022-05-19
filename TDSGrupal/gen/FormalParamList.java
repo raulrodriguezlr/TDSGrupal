@@ -13,8 +13,15 @@ public class FormalParamList {
     }
     public String toString(){
         String s="";
-        for(FormalParam aux: formalparam)
-           s+=aux;
+
+        for(FormalParam aux: formalparam) {
+            s += aux;
+            if (formalparam.get(formalparam.size()-1) != aux) {
+                s += " ; ";
+            }
+        }
+
         return s;
+
     }
 }

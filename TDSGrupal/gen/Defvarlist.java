@@ -31,7 +31,7 @@ public class Defvarlist {
         }
         else {
             for (Varlist aux : varlist) {
-                s += "<div>";
+                s += "<div style=\"text-indent: 1.5cm\">";
                 s += aux + ": ";
                 s += tbas.get(i);
                 s += ";\n";

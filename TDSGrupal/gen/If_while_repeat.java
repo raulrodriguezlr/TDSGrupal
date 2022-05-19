@@ -2,13 +2,19 @@ public class If_while_repeat {
     private Expcond expcond;
     private Blq blq1;
     private Blq blq2;
+    private int identacion;
 
     public If_while_repeat() {
         this.expcond = null;
         this.blq1 = null;
         this.blq2 = null;
+        identacion=0;
     }
 
+
+    public void setIdentacion(int i){
+        identacion=i;
+    }
     public Expcond getExpcond() {
         return this.expcond;
     }
