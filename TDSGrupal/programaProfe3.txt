@@ -81,6 +81,13 @@ BEGIN
     e1 := 123E456; e2 := -64E-77; e3 := +045e16; e4 := 003E+35;
     m1 := 1.23E456; m2 := -000.64E-77; m3 := +045.0e16; m4 := 0.03E+35;
     Write(ROUND(Fahrenheit_temp));
+    REPEAT
+        BEGIN
+                                 WriteLn('SUM IS NOT = TO NUMBER');
+                                 WriteLn('Repeating');
+
+                        END
+                    UNTIL (sum <= 10);
     WHILE (i<10) DO
         BEGIN
             Writeln(i);
@@ -89,5 +96,15 @@ BEGIN
         BEGIN
             Writeln(i);
         END
+
+    IF Celsius_temp >= 40.0 THEN
+                        BEGIN
+                            WriteLn('Too hot ');
+                        END
+                    ELSE
+                        BEGIN
+                            WriteLn('Alright ');
+                        END
     Ending;
+
 END.

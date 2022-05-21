@@ -31,10 +31,10 @@ public class Factor {
         String s="";
 
         if(!simpvalue.equals("")) {
-            s += simpvalue;
+            s += "<SPAN CLASS=\"cte\">"+simpvalue+"</SPAN>";
         }
         if(exp != null) {
-            s += "(" + exp + ")";
+            s += "(" + "<SPAN CLASS=\"cte\">"+exp+"</SPAN>" + ")";
         }
         if(!id.equals("")) {
             if(subparamlist!=null) {

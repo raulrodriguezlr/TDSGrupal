@@ -19,6 +19,9 @@ public class Asig {
     public void setIdentacion(int i){
         identacion=i;
     }
+    public int getIdentacion(){
+        return identacion;
+    }
     public String toString() {
         String s ="<div style=\"text-indent:"+identacion*1.5+"cm\">"+ id + ":= ";
         s+= exp+";</div>";
