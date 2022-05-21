@@ -15,7 +15,7 @@ public class Sent {
         this.bucle_while = null;
         this.bucle_repeat = null;
         this.bucle_for = null;
-        identacion=0;
+        identacion=1;
     }
     public boolean isFor(){
         if(bucle_for!=null)
@@ -44,6 +44,9 @@ public class Sent {
 
     public For getBucle_for(){
         return bucle_for;
+    }
+    public void setIdentacion(int i){
+        identacion=i;
     }
 
     public void setAsig(Asig aux) {
@@ -116,13 +119,13 @@ public class Sent {
         if(cond!=null) {
 
             s += "<div style=\"text-indent:"+ 1.5*identacion+"cm\"><SPAN CLASS=\"palres\"> IF </SPAN>" + cond.getExpcond() + "<SPAN CLASS=\"palres\"> THEN </SPAN></DIV>\n";
-            s += "<div style=\"text-indent:"+ 3*(identacion)+"cm\">" + cond.getBlq1() + "</div>" + "\n";
+            s += "<div style=\"text-indent:"+ 1.5*(identacion)+"cm\">" + cond.getBlq1() + "</div>" + "\n";
             s += "<div style=\"text-indent:"+ 1.5*identacion+"cm\"><SPAN CLASS=\"palres\"> ELSE </SPAN>\n" ;
             s += cond.getBlq2();
             return s;
         }
         if(bucle_while!=null) {
-            s += "<div style=\"text-indent:"+ 1.5*identacion+"cm\"><SPAN CLASS=\"palres\"> WHILE </SPAN></div>\n"  + bucle_while.getExpcond() + "<div style=\"text-indent: 1.5cm\"><SPAN CLASS=\"palres\"> DO </SPAN></div>\n" ;
+            s += "<div style=\"text-indent:"+ 1.5*identacion+"cm\"><SPAN CLASS=\"palres\"> WHILE </SPAN>\n"  + bucle_while.getExpcond() + "<SPAN CLASS=\"palres\"> DO </SPAN></div>\n" ;
             s += "<div style=\"text-indent:"+ 3*identacion+"cm\">" + bucle_while.getBlq1() + "</div>" + "\n";
         }
         if(bucle_repeat!=null) {
@@ -134,5 +137,9 @@ public class Sent {
             s += bucle_for;
         }
         return s;
+    }
+
+    public int getIdentacion() {
+        return identacion;
     }
 }

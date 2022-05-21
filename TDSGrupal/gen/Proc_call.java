@@ -26,4 +26,8 @@ public class Proc_call {
         s += "<div style=\"text-indent:"+ identacion*1.5+"cm\">"+id + subparamlist+";</div>";
         return s;
     }
+
+    public int getIdentacion() {
+        return identacion;
+    }
 }

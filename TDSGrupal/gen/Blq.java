@@ -12,6 +12,9 @@ public class Blq {
     public Sentlist getSentlist(){
         return sentlist;
     }
+    public void setIdentacionSentlist(int i){
+            sentlist.setIdentacion(i);
+    }
 
     public void setDcllist(Dcllist aux){
         this.dcllist=aux;
@@ -27,4 +30,7 @@ public class Blq {
     }
 
 
+    public int getIdentacionSentlist() {
+        return sentlist.getIdentacion();
+    }
 }

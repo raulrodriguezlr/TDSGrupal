@@ -1,0 +1,110 @@
+(* Simple Program to Convert
+Celsius temperature to Fahrenheit
+to evaluate the optional part
+with nested loops
+*)
+PROGRAM Convert;
+    CONST
+        ratio = 1.8;
+        r1 = +123.456; r2 = -00.69; r3 = 45.07000;
+    VAR
+        Celsius_temp, Fahrenheit_temp: real;
+    (*--procedure definition --*)
+    PROCEDURE _get_input_;
+    BEGIN
+        Write('Enter Degrees C: ');
+        Read(Celsius_temp);
+        IF Celsius_temp >= 0 THEN
+            BEGIN
+                WriteLn('Positive input');
+                IF Celsius_temp >= 40.0 THEN
+                    BEGIN
+                        WriteLn('Too hot ');
+                    END
+                ELSE
+                    BEGIN
+                        WriteLn('Alright ');
+                    END
+                WriteLn('Temperature');
+            END
+        ELSE
+            BEGIN
+                WriteLn('Negative input');
+            END
+        WriteLn('Sentence with "double quotes" inside');
+    END;
+    (*--function definition --*)
+    FUNCTION Celsius2Fahrenheit(Celsius_temp: real; dummy_value : integer): real;
+    VAR
+       { local variable declaration }
+       temperature: real;
+    BEGIN
+       temperature := (ratio * Celsius_temp) + 32.0;        {Celsius to Fahrenheit formula}
+       Celsius2Fahrenheit := temperature;
+    END;
+    PROCEDURE Ending (dummy_value2 : real; dummy_value3 : integer);
+    BEGIN
+        WriteLn;
+        WriteLn('Exiting...');
+        WriteLn;
+    END;
+    FUNCTION Another_dummy1_function  (dummy_variable : real) :integer;
+    BEGIN
+
+        REPEAT
+            BEGIN
+                sum := sum + number;
+                number := number DIV 2;
+                REPEAT
+                    BEGIN
+                        IF (sum = number) THEN
+                            BEGIN
+                                WriteLn('SUM = NUMBER');
+                            END
+                        ELSE
+                            BEGIN
+                                WriteLn('SUM IS NOT = TO NUMBER');
+                            END
+                        WriteLn('Repeating');
+                    END
+                UNTIL (sum <= 10);
+            END
+        UNTIL (number = 0) OR (sum > 20.25E2);
+    END;
+{****** MAIN PROGRAM ******}
+BEGIN
+    int1 := +123; int2 := -690; int3 := 405; int4 := 000078; int5 := -005; int6 :=+0953;
+    _get_input_;
+    Fahrenheit_temp := Celsius2Fahrenheit(Celsius_temp);    {Call the Function}
+    Write('Fahrenheit  is ');
+    { More Dummy declarations }
+    e1 := 123E456; e2 := -64E-77; e3 := +045e16; e4 := 003E+35;
+    m1 := 1.23E456; m2 := -000.64E-77; m3 := +045.0e16; m4 := 0.03E+35;
+    Write(ROUND(Fahrenheit_temp));
+    REPEAT
+        BEGIN
+                                 WriteLn('SUM IS NOT = TO NUMBER');
+                                 WriteLn('Repeating');
+
+                        END
+                    UNTIL (sum <= 10);
+    WHILE (i<10) DO
+        BEGIN
+            Writeln(i);
+        END
+    FOR i:= 1 TO 10 DO
+        BEGIN
+            Writeln(i);
+        END
+
+    IF Celsius_temp >= 40.0 THEN
+                        BEGIN
+                            WriteLn('Too hot ');
+                        END
+                    ELSE
+                        BEGIN
+                            WriteLn('Alright ');
+                        END
+    Ending;
+
+END.

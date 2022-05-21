@@ -22,6 +22,12 @@ public class If_while_repeat {
     public Blq getBlq1() {
         return this.blq1;
     }
+    public void setIdentacionBlq1(int i){
+        blq1.setIdentacionSentlist(i);
+    }
+    public void setIdentacionBlq2(int i){
+        blq1.setIdentacionSentlist(i);
+    }
 
     public Blq getBlq2() {
         return this.blq2;
@@ -39,5 +45,11 @@ public class If_while_repeat {
         this.blq2 = aux;
     }
 
+    public int getIdentacionBlq1() {
+        return blq1.getIdentacionSentlist();
+    }
+    public int getIdentacionBlq2() {
+        return blq2.getIdentacionSentlist();
+    }
 }
 
