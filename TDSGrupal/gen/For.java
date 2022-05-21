@@ -45,7 +45,8 @@ public class For {
 
         public String toString() {
             String s = "";
-            s += "\n<div style=\"text-indent:"+ 1.5*identacion+"cm\"><SPAN CLASS=\"palres\"> FOR </SPAN>" + id + ":= " + exp1 + " " + inc + " " + exp2 +
+            s += "\n<div style=\"text-indent:"+ 1.5*identacion+"cm\"><SPAN CLASS=\"palres\"> FOR </SPAN>" + "<SPAN CLASS=\"ident\">" + id + "</SPAN>"
+                    + ":= " + exp1 + " " + "<SPAN CLASS=\"palres\">" + inc + "</SPAN>" + " " + exp2 +
                     "<SPAN CLASS=\"palres\"> DO </SPAN>"+" </div>\n";
             s +=  blq + "\n";
             return s;

@@ -23,7 +23,7 @@ public class Asig {
         return identacion;
     }
     public String toString() {
-        String s ="<div style=\"text-indent:"+identacion*1.5+"cm\">"+ id + ":= ";
+        String s ="<div style=\"text-indent:"+identacion*1.5+"cm\">"+ "<SPAN CLASS=\"ident\">" + id + "</SPAN>" + ":= ";
         s+= exp+";</div>";
         return s;
     }

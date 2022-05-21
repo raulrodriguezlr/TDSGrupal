@@ -27,32 +27,32 @@ public class DefSubrutina {
 
     public String subrutinaCompleta(){
 
-        String s="\n\t<div style=\"text-indent: 0cm\">\n\t\t<A NAME="+id+">"+cabecera+" "+id;
+        String s="\n\t<div style=\"text-indent: 0cm\">\n\t\t<A NAME=" +id+">"+"<SPAN CLASS=\"palres\">" + cabecera + "</SPAN>" + " " + "<SPAN CLASS=\"ident\">" + id + "</SPAN>";
         if(paramlist!=null) {
             s+="(" + paramlist + ")";
         }
         if(tbas!=null){
-            s+=" :"+tbas;
+            s+=" :"+"<SPAN CLASS=\"palres\">" + tbas + "</SPAN>";
         }
         s+="</A>\n\t</div>\n";
 
         s+="\t"+blq.dcllist.varSubprogramas()+blq.sentlist;
-        s+="\t\t\t"+"<div style=\"text-indent: 1.5cm\"><A HREF=\"#"+id+"\">Inicio Subprograma</A></div>\n";
+        s+="\t\t\t"+"<div style=\"text-indent: 1.5cm\"><A HREF=\"#"+ id +"\">Inicio Subprograma</A></div>\n";
         s+="\t\t\t"+"<div style=\"text-indent: 1.5cm\"><A HREF=\"#InicioPrograma\">Inicio Programa</A></div>\n";
         s+="<HR/>";
         return s;
     }
     public String toString(){
         String s="\t"+"<LI>\n";
-        s+="\t\t\t"+"<A HREF=\"#"+id+"\">";
+        s+="\t\t\t"+"<A HREF=\"#"+ id +"\">";
 
         if (tbas == null) {
-            s += id;
+            s += "<SPAN CLASS=\"ident\">" + id + "</SPAN>";
             if(paramlist!=null) {
                 s += "(" + paramlist + ")";
             }
         } else {
-            s += tbas + " " + id;
+            s += "<SPAN CLASS=\"palres\">" + tbas + "</SPAN>" + " " + "<SPAN CLASS=\"ident\">" + id + "</SPAN>";
             if(paramlist!=null) {
                 s += "(" + paramlist + ")";
             }

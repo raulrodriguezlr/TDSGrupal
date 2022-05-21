@@ -10,7 +10,7 @@ public class Defcte {
     }
 
     public String toString(){
-        String s= "CONST \n"+ctelist;
+        String s= "<SPAN CLASS=\"palres\">CONST</SPAN>" + ctelist;
         return s;
     }
 }

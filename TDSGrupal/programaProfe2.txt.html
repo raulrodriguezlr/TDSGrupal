@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>programaProfe2.txt.html</title>
+	<title>TDSGrupal/programaProfe2.txt.html</title>
 <style>
 	.cte {color: orange;}
 	.palres{color: red;}
@@ -33,19 +33,19 @@
 		<A NAME=_get_input_>PROCEDURE _get_input_</A>
 	</div>
 	
-<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm">Write('Enter Degrees C: ');</div>
-<div style="text-indent:1.5cm">Read(Celsius_temp );</div>
-<div style="text-indent:1.5cm"><SPAN CLASS="palres"> IF </SPAN>Celsius_temp >=0<SPAN CLASS="palres"> THEN </SPAN></DIV>
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm"><SPAN CLASS="ident">Write</SPAN>(<SPAN CLASS="cte">'Enter Degrees C: '</SPAN>);</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">Read</SPAN>(<SPAN CLASS="ident">Celsius_temp</SPAN> );</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="palres"> IF </SPAN><SPAN CLASS="ident">Celsius_temp</SPAN> >=<SPAN CLASS="cte">0</SPAN><SPAN CLASS="palres"> THEN </SPAN></DIV>
 <div style="text-indent:1.5cm">
-<div style="text-indent:3.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:3.0cm">WriteLn('Positive input');</div>
+<div style="text-indent:3.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:3.0cm"><SPAN CLASS="ident">WriteLn</SPAN>(<SPAN CLASS="cte">'Positive input'</SPAN>);</div>
 
 <div style="text-indent:3.0cm"><SPAN CLASS="palres"> END </SPAN></div></div>
 <div style="text-indent:1.5cm"><SPAN CLASS="palres"> ELSE </SPAN>
 
-<div style="text-indent:3.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:3.0cm">WriteLn('Negative input');</div>
+<div style="text-indent:3.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:3.0cm"><SPAN CLASS="ident">WriteLn</SPAN>(<SPAN CLASS="cte">'Negative input'</SPAN>);</div>
 
 <div style="text-indent:3.0cm"><SPAN CLASS="palres"> END </SPAN></div>
-<div style="text-indent:1.5cm">WriteLn('Sentence with "double quotes" inside');</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">WriteLn</SPAN>(<SPAN CLASS="cte">'Sentence with "double quotes" inside'</SPAN>);</div>
 
 <div style="text-indent:0.0cm"><SPAN CLASS="palres"> END </SPAN></div>			<div style="text-indent: 1.5cm"><A HREF="#_get_input_">Inicio Subprograma</A></div>
 			<div style="text-indent: 1.5cm"><A HREF="#InicioPrograma">Inicio Programa</A></div>
@@ -56,8 +56,8 @@
 		<div style="text-indent: 0cm">VAR</div>
 <div style="text-indent: 1.5cm"><div style="text-indent: 1.5cm">temperature: real;
 </div></div>	
-<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm">temperature:= (ratio * Celsius_temp )+ 32.0;</div>
-<div style="text-indent:1.5cm">Celsius2Fahrenheit:= temperature ;</div>
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm"><SPAN CLASS="ident">temperature</SPAN>:= (<SPAN CLASS="cte"><SPAN CLASS="ident">ratio</SPAN> * <SPAN CLASS="ident">Celsius_temp</SPAN> </SPAN>)+ <SPAN CLASS="cte">32.0</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">Celsius2Fahrenheit</SPAN>:= <SPAN CLASS="ident">temperature</SPAN> ;</div>
 
 <div style="text-indent:0.0cm"><SPAN CLASS="palres"> END </SPAN></div>			<div style="text-indent: 1.5cm"><A HREF="#Celsius2Fahrenheit">Inicio Subprograma</A></div>
 			<div style="text-indent: 1.5cm"><A HREF="#InicioPrograma">Inicio Programa</A></div>
@@ -66,9 +66,9 @@
 		<A NAME=Ending>PROCEDURE Ending(dummy_value2: real ; dummy_value3: integer)</A>
 	</div>
 	
-<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm">WriteLn;</div>
-<div style="text-indent:1.5cm">WriteLn('Exiting...');</div>
-<div style="text-indent:1.5cm">WriteLn;</div>
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm"><SPAN CLASS="ident">WriteLn</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">WriteLn</SPAN>(<SPAN CLASS="cte">'Exiting...'</SPAN>);</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">WriteLn</SPAN>;</div>
 
 <div style="text-indent:0.0cm"><SPAN CLASS="palres"> END </SPAN></div>			<div style="text-indent: 1.5cm"><A HREF="#Ending">Inicio Subprograma</A></div>
 			<div style="text-indent: 1.5cm"><A HREF="#InicioPrograma">Inicio Programa</A></div>
@@ -79,11 +79,11 @@
 	
 <div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm"><SPAN CLASS="palres"> REPEAT </SPAN></div>
 <div style="text-indent:1.5cm">
-<div style="text-indent:1.5cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:3.0cm">sum:= sum + number ;</div>
-<div style="text-indent:3.0cm">number:= number DIV 2;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:3.0cm"><SPAN CLASS="ident">sum</SPAN>:= <SPAN CLASS="ident">sum</SPAN> + <SPAN CLASS="ident">number</SPAN> ;</div>
+<div style="text-indent:3.0cm"><SPAN CLASS="ident">number</SPAN>:= <SPAN CLASS="ident">number</SPAN> DIV <SPAN CLASS="cte">2</SPAN>;</div>
 
 <div style="text-indent:1.5cm"><SPAN CLASS="palres"> END </SPAN></div></div>
-<div style="text-indent: 1.5cm"><SPAN CLASS="palres"> UNTIL </SPAN>(number =0) OR (sum >20.25E2)</div>
+<div style="text-indent: 1.5cm"><SPAN CLASS="palres"> UNTIL </SPAN>(<SPAN CLASS="ident">number</SPAN> =<SPAN CLASS="cte">0</SPAN>) OR (<SPAN CLASS="ident">sum</SPAN> ><SPAN CLASS="cte">20.25E2</SPAN>)</div>
 
 <div style="text-indent:0.0cm"><SPAN CLASS="palres"> END </SPAN></div>			<div style="text-indent: 1.5cm"><A HREF="#Another_dummy1_function">Inicio Subprograma</A></div>
 			<div style="text-indent: 1.5cm"><A HREF="#InicioPrograma">Inicio Programa</A></div>
@@ -93,33 +93,33 @@
 <div style="text-indent: 1.5cm"><SPAN CLASS="cte">ratio = 1.8;</SPAN></div><div style="text-indent: 1.5cm"><SPAN CLASS="cte">r1 = +123.456;</SPAN></div><div style="text-indent: 1.5cm"><SPAN CLASS="cte">r2 = -00.69;</SPAN></div><div style="text-indent: 1.5cm"><SPAN CLASS="cte">r3 = 45.07000;</SPAN></div>		<div style="text-indent: 0cm">VAR</div>
 <div style="text-indent: 1.5cm"><div style="text-indent: 1.5cm">Celsius_temp,Fahrenheit_temp: real;
 </div></div>	
-<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm">int1:= +123;</div>
-<div style="text-indent:1.5cm">int2:= -690;</div>
-<div style="text-indent:1.5cm">int3:= 405;</div>
-<div style="text-indent:1.5cm">int4:= 000078;</div>
-<div style="text-indent:1.5cm">int5:= -005;</div>
-<div style="text-indent:1.5cm">int6:= +0953;</div>
-<div style="text-indent:1.5cm">_get_input_;</div>
-<div style="text-indent:1.5cm">Fahrenheit_temp:= Celsius2Fahrenheit (Celsius_temp );</div>
-<div style="text-indent:1.5cm">Write('Fahrenheit  is ');</div>
-<div style="text-indent:1.5cm">e1:= 123E456;</div>
-<div style="text-indent:1.5cm">e2:= -64E-77;</div>
-<div style="text-indent:1.5cm">e3:= +045e16;</div>
-<div style="text-indent:1.5cm">e4:= 003E+35;</div>
-<div style="text-indent:1.5cm">m1:= 1.23E456;</div>
-<div style="text-indent:1.5cm">m2:= -000.64E-77;</div>
-<div style="text-indent:1.5cm">m3:= +045.0e16;</div>
-<div style="text-indent:1.5cm">m4:= 0.03E+35;</div>
-<div style="text-indent:1.5cm">Write(ROUND (Fahrenheit_temp ));</div>
+<div style="text-indent:0.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:1.5cm"><SPAN CLASS="ident">int1</SPAN>:= <SPAN CLASS="cte">+123</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">int2</SPAN>:= <SPAN CLASS="cte">-690</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">int3</SPAN>:= <SPAN CLASS="cte">405</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">int4</SPAN>:= <SPAN CLASS="cte">000078</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">int5</SPAN>:= <SPAN CLASS="cte">-005</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">int6</SPAN>:= <SPAN CLASS="cte">+0953</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">_get_input_</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">Fahrenheit_temp</SPAN>:= <SPAN CLASS="ident">Celsius2Fahrenheit</SPAN> (<SPAN CLASS="ident">Celsius_temp</SPAN> );</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">Write</SPAN>(<SPAN CLASS="cte">'Fahrenheit  is '</SPAN>);</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">e1</SPAN>:= <SPAN CLASS="cte">123E456</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">e2</SPAN>:= <SPAN CLASS="cte">-64E-77</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">e3</SPAN>:= <SPAN CLASS="cte">+045e16</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">e4</SPAN>:= <SPAN CLASS="cte">003E+35</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">m1</SPAN>:= <SPAN CLASS="cte">1.23E456</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">m2</SPAN>:= <SPAN CLASS="cte">-000.64E-77</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">m3</SPAN>:= <SPAN CLASS="cte">+045.0e16</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">m4</SPAN>:= <SPAN CLASS="cte">0.03E+35</SPAN>;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">Write</SPAN>(<SPAN CLASS="ident">ROUND</SPAN> (<SPAN CLASS="ident">Fahrenheit_temp</SPAN> ));</div>
 
-<div style="text-indent:1.5cm"><SPAN CLASS="palres"> FOR </SPAN>i:= 1 TO 10<SPAN CLASS="palres"> DO </SPAN> </div>
+<div style="text-indent:1.5cm"><SPAN CLASS="palres"> FOR </SPAN><SPAN CLASS="ident">i</SPAN>:= <SPAN CLASS="cte">1</SPAN> TO <SPAN CLASS="cte">10</SPAN><SPAN CLASS="palres"> DO </SPAN> </div>
 
-<div style="text-indent:3.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:4.5cm">Writeln(i );</div>
-<div style="text-indent:4.5cm">Writeln(i );</div>
+<div style="text-indent:3.0cm"><SPAN CLASS="palres"> BEGIN </SPAN></div><div style="text-indent:4.5cm"><SPAN CLASS="ident">Writeln</SPAN>(<SPAN CLASS="ident">i</SPAN> );</div>
+<div style="text-indent:4.5cm"><SPAN CLASS="ident">Writeln</SPAN>(<SPAN CLASS="ident">i</SPAN> );</div>
 
 <div style="text-indent:3.0cm"><SPAN CLASS="palres"> END </SPAN></div>
 
-<div style="text-indent:1.5cm">Ending;</div>
+<div style="text-indent:1.5cm"><SPAN CLASS="ident">Ending</SPAN>;</div>
 
 <div style="text-indent:0.0cm"><SPAN CLASS="palres"> END </SPAN></div>
 </body>

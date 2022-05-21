@@ -23,7 +23,7 @@ public class Proc_call {
 
     public String toString() {
         String s="";
-        s += "<div style=\"text-indent:"+ identacion*1.5+"cm\">"+id + subparamlist+";</div>";
+        s += "<div style=\"text-indent:"+ identacion*1.5+"cm\">" + "<SPAN CLASS=\"ident\">" + id + "</SPAN>" + subparamlist+";</div>";
         return s;
     }
 

@@ -21,7 +21,7 @@ public class Prg {
     }
     public String toString(){
 
-        String s ="\t<A name=\"InicioPrograma\">\n\t<H1>"+cabecera  +cola +"</H1>\n\t</A>\n";
+        String s ="\t<A name=\"InicioPrograma\">\n\t<H1>"+cabecera  + "<SPAN CLASS=\"ident\">" + cola + "</SPAN>" +"</H1>\n\t</A>\n";
         for(Blq aux:blq){
             s+=aux;
         }

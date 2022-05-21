@@ -28,7 +28,7 @@ public class Expcond {
                 while(i < factorlenght) {
                     if(i < oploglenght) {
                         s += factorcond.get(i);
-                        s +=" " +oplog.get(i)+" ";
+                        s +=" " + "<SPAN CLASS=\"palres\">" + oplog.get(i) + "</SPAN>"+" ";
                     }
                     else {
                         s += factorcond.get(i);
@@ -41,10 +41,10 @@ public class Expcond {
                 while(i < oploglenght) {
                     if(i < factorlenght) {
                         s += factorcond.get(i);
-                        s += oplog.get(i);
+                        s += "<SPAN CLASS=\"palres\">" + oplog.get(i) + "</SPAN>";
                     }
                     else {
-                        s += oplog.get(i);
+                        s += "<SPAN CLASS=\"palres\">" + oplog.get(i) + "</SPAN>";
                     }
                     i++;
                 }

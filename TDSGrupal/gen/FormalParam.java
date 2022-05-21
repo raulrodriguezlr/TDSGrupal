@@ -15,7 +15,7 @@ public class FormalParam {
 
     public String toString(){
         String s="";
-        s+=varlist+ ": "+tbas;
+        s+=varlist+ ": "+"<SPAN CLASS=\"palres\">" + tbas + "</SPAN>";
         return s;
     }
 }

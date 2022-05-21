@@ -38,10 +38,10 @@ public class Factor {
         }
         if(!id.equals("")) {
             if(subparamlist!=null) {
-                s += id +" "+subparamlist;
+                s += "<SPAN CLASS=\"ident\">" + id + "</SPAN>" +" "+subparamlist;
             }
             else{
-                s += id;
+                s += "<SPAN CLASS=\"ident\">" + id + "</SPAN>";
             }
         }
 

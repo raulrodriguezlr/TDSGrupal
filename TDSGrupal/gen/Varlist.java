@@ -17,7 +17,7 @@ public class Varlist {
     public String toString(){
         String s= "";
         for (String aux :identificador){
-            s+=aux;
+            s+="<SPAN CLASS=\"ident\">" + aux + "</SPAN>";
         }
 
         return s;

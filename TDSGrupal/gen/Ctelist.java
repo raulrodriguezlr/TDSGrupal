@@ -15,7 +15,7 @@ public class Ctelist {
     public String toString(){
         String s="";
         for(String aux:ctelist){
-            s+="<div style=\"text-indent: 1.5cm\"><SPAN CLASS=\"cte\">"+aux+";</SPAN></div>";
+            s+="<div style=\"text-indent: 1.5cm\"><SPAN CLASS=\"cte\">"+aux+"</SPAN>;</div>";
         }
         return s;
     }
